@@ -5,7 +5,7 @@ interface LayoutPropTypes {
 }
 
 const Layout = (props: LayoutPropTypes) => {
-	return <div className="text m-auto max-w-screen-xl">{props.children}</div>;
+	return <div className="m-auto max-w-full">{props.children}</div>;
 };
 
 export default Layout;
