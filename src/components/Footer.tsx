@@ -6,7 +6,7 @@ const Footer = () => {
 	return (
 		<div className="mx-auto h-[5rem] bg-gray-800 sm:px-6 lg:px-8">
 			<div className="flex h-full w-full items-center justify-center">
-				<SecondaryTitle title="Footer" />
+				<h2 className="text-3xl text-orange-200">Footer</h2>
 			</div>
 		</div>
 	);
