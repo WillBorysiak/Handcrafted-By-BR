@@ -7,5 +7,5 @@ module.exports = {
 			roman: ['Luxurious Roman', 'san-serif'],
 		},
 	},
-	plugins: [],
+	plugins: [require('@tailwindcss/aspect-ratio')],
 };
