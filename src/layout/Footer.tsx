@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SecondaryTitle from './SecondaryTitle';
+import SecondaryTitle from '../components/Typography/SecondaryTitle';
 
 const Footer = () => {
 	return (

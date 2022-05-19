@@ -4,7 +4,6 @@ import { Link } from 'gatsby';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
 import { navigation } from '../data/navbar-data';
-import { StaticImage } from 'gatsby-plugin-image';
 
 function classNames(...classes: any) {
 	return classes.filter(Boolean).join(' ');

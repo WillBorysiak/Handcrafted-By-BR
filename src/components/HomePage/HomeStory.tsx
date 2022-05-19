@@ -65,7 +65,7 @@ const MainSecondaryContent = () => {
 			</div>
 			<div className="relative mx-auto max-w-7xl">
 				<div className="text-center">
-					<h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">About Me</h2>
+					<h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">My Story</h2>
 					<p className="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
 						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque, ducimus sed.
 					</p>

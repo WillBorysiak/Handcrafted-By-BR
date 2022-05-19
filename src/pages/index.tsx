@@ -1,10 +1,8 @@
 import React from 'react';
 
 import SEO from '../layout/SEO';
-import MainHero from '../components/MainHero';
+import MainHero from '../components/HomePage/HomePage';
 import Layout from '../layout/Layout';
-import MainContent from '../components/MainContent';
-import MainSecondaryContent from '../components/MainSecondaryContent';
 
 const IndexPage = () => {
 	return (
@@ -12,8 +10,6 @@ const IndexPage = () => {
 			<Layout>
 				<SEO title="Home" />
 				<MainHero />
-				<MainContent />
-				<MainSecondaryContent />
 			</Layout>
 		</>
 	);

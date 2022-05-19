@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SecondaryTitle from './SecondaryTitle';
+import SecondaryTitle from '../Typography/SecondaryTitle';
 import { StaticImage } from 'gatsby-plugin-image';
 
 /* This example requires Tailwind CSS v2.0+ */
