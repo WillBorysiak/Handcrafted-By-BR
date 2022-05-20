@@ -3,6 +3,7 @@ import React from 'react';
 const features = [
 	{
 		name: 'Minimal and thoughtful',
+		id: 1,
 		description:
 			'Our laptop sleeve is compact and precisely fits 13" devices. The zipper allows you to access the interior with ease, and the front pouch provides a convenient place for your charger cable.',
 		imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-07-detail-01.jpg',
@@ -10,6 +11,23 @@ const features = [
 	},
 	{
 		name: 'Refined details',
+		id: 2,
+		description:
+			'We design every detail with the best materials and finishes. This laptop sleeve features durable canvas with double-stitched construction, a felt interior, and a high quality zipper that hold up to daily use.',
+		imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-07-detail-02.jpg',
+		imageAlt: 'Detail of zipper pull with tan leather and silver rivet.',
+	},
+	{
+		name: 'Minimal and thoughtful',
+		id: 3,
+		description:
+			'Our laptop sleeve is compact and precisely fits 13" devices. The zipper allows you to access the interior with ease, and the front pouch provides a convenient place for your charger cable.',
+		imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-07-detail-01.jpg',
+		imageAlt: 'White canvas laptop sleeve with gray felt interior, silver zipper, and tan leather zipper pull.',
+	},
+	{
+		name: 'Refined details',
+		id: 4,
 		description:
 			'We design every detail with the best materials and finishes. This laptop sleeve features durable canvas with double-stitched construction, a felt interior, and a high quality zipper that hold up to daily use.',
 		imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-07-detail-02.jpg',
@@ -26,7 +44,7 @@ const ProcessGrid = () => {
 		<div className="bg-orange-200">
 			<div className="mx-auto max-w-2xl py-5 px-4 sm:px-6 sm:py-10 lg:max-w-7xl lg:px-8">
 				<div className="mx-auto max-w-3xl text-center">
-					<h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Protect your device</h2>
+					<h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Drawing to thread to ???</h2>
 					<p className="mt-4 text-gray-500">
 						As a digital creative, your laptop or tablet is at the center of your work. Keep your device safe with a
 						fabric sleeve that matches in quality and looks.
@@ -35,10 +53,7 @@ const ProcessGrid = () => {
 
 				<div className="mt-16 space-y-16">
 					{features.map((feature, featureIdx) => (
-						<div
-							key={feature.name}
-							className="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8"
-						>
+						<div key={feature.id} className="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8">
 							<div
 								className={classNames(
 									featureIdx % 2 === 0 ? 'lg:col-start-1' : 'lg:col-start-8 xl:col-start-9',

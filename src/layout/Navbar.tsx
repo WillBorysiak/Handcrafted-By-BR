@@ -35,11 +35,9 @@ export default function Example() {
 											<Link
 												key={item.name}
 												to={`${item.pageLink}`}
+												activeStyle={{ color: '#fed7aa', backgroundColor: '#374151' }}
 												className={classNames(
-													item.current
-														? 'bg-gray-900 text-white'
-														: 'font-bold text-orange-200 hover:bg-gray-700 hover:text-white',
-													'rounded-md px-10 py-2 text-sm font-medium',
+													'rounded-md px-10 py-2 text-sm font-medium text-gray-300 hover:text-gray-100',
 												)}
 												aria-current={item.current ? 'page' : undefined}
 											>
@@ -58,9 +56,9 @@ export default function Example() {
 								<Link
 									key={item.name}
 									to={`${item.pageLink}`}
+									activeStyle={{ color: '#fed7aa', backgroundColor: '#374151' }}
 									className={classNames(
-										item.current ? 'bg-gray-900 text-white' : 'text-orange-200  hover:bg-gray-700 hover:text-white',
-										' flex flex-row items-center justify-between rounded-md px-3 py-2 font-roman text-base font-bold tracking-widest',
+										' flex flex-row items-center justify-between rounded-md px-3 py-2 font-roman text-base font-bold tracking-widest text-gray-300',
 									)}
 									aria-current={item.current ? 'page' : undefined}
 								>

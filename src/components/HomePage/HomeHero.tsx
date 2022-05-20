@@ -1,22 +1,26 @@
 import React from 'react';
 
-import SecondaryTitle from '../Typography/SecondaryTitle';
+import Heading from '../Typography/Heading';
 import { StaticImage } from 'gatsby-plugin-image';
 
-/* This example requires Tailwind CSS v2.0+ */
-const MainContent = () => {
+const HomeHero = () => {
 	return (
 		<div className="relative overflow-hidden bg-primary">
 			<div className=" pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
 				<div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
 					<div className="sm:max-w-lg">
 						<div className="flex flex-col items-center ">
-							<SecondaryTitle title="Made with fabric and thread in Derbyshire, England." />
+							<Heading title="Made with fabric and thread in Derbyshire, England." />
 							<div className=" mt-3 flex w-1/2 justify-center">
-								<StaticImage src="../assets/images/uk-icon.png" alt="The UK flag" height={50} placeholder="blurred" />
+								<StaticImage
+									src="../../assets/images/uk-icon.png"
+									alt="The UK flag"
+									height={50}
+									placeholder="blurred"
+								/>
 							</div>
 						</div>
-						<div>
+						<div className="font-roman">
 							<p className="mt-4 text-center text-xl text-gray-500 md:mt-8">Planned from your imagination.</p>
 							<p className="mt-4 text-center text-xl text-gray-500">Sketched and drawn by hand.</p>
 							<p className="mt-4 text-center text-xl text-gray-500">Sewn together beautifully.</p>
@@ -98,4 +102,4 @@ const MainContent = () => {
 	);
 };
 
-export default MainContent;
+export default HomeHero;

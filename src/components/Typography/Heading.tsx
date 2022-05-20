@@ -6,9 +6,9 @@ interface SecondaryTitlePropTypes {
 
 const SecondaryTitle = (props: SecondaryTitlePropTypes) => {
 	return (
-		<p className="sm:text-2lg mx-auto mt-3 max-w-md text-center font-roman text-xl font-bold text-gray-900 md:mt-2 md:max-w-3xl md:text-3xl">
+		<h2 className="mx-auto mt-3 max-w-md text-center font-roman text-2xl font-bold text-gray-900 sm:text-2xl md:mt-2 md:max-w-3xl md:text-3xl">
 			{props.title}
-		</p>
+		</h2>
 	);
 };
 

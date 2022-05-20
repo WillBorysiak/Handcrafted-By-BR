@@ -1,8 +1,9 @@
 import React from 'react';
 
 import Title from '../Typography/Title';
-import MainContent from './HomeContent';
-import MainSecondaryContent from './HomeStory';
+import HomeFeatures from './HomeFeatures';
+import HomeHero from './HomeHero';
+import HomeStory from './HomeStory';
 
 const MainHero = () => {
 	return (
@@ -14,8 +15,9 @@ const MainHero = () => {
 					</div>
 				</main>
 			</div>
-			<MainContent />
-			<MainSecondaryContent />
+			<HomeHero />
+			<HomeStory />
+			<HomeFeatures />
 		</>
 	);
 };

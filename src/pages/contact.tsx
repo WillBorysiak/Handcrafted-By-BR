@@ -3,6 +3,7 @@ import React from 'react';
 import Layout from '../layout/Layout';
 import SEO from '../layout/SEO';
 import Title from '../components/Typography/Title';
+import ContactInfo from '../components/ContactPage/ContactInfo';
 
 const ContactPage = () => {
 	return (
@@ -14,6 +15,7 @@ const ContactPage = () => {
 					</div>
 				</main>
 			</div>
+			<ContactInfo />
 		</Layout>
 	);
 };
