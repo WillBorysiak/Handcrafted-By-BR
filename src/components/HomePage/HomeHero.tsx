@@ -5,7 +5,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 const HomeHero = () => {
 	return (
-		<div className="relative overflow-hidden bg-primary">
+		<section className="relative overflow-hidden bg-primary">
 			<div className=" pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
 				<div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
 					<div className="sm:max-w-lg">
@@ -16,7 +16,7 @@ const HomeHero = () => {
 									src="../../assets/images/uk-icon.png"
 									alt="The UK flag"
 									height={50}
-									placeholder="blurred"
+									placeholder="tracedSVG"
 								/>
 							</div>
 						</div>
@@ -98,7 +98,7 @@ const HomeHero = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

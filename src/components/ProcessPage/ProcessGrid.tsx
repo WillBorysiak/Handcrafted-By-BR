@@ -1,5 +1,7 @@
 import React from 'react';
 
+import SubTitle from '../Typography/SubTitle';
+
 const features = [
 	{
 		name: 'Minimal and thoughtful',
@@ -44,7 +46,7 @@ const ProcessGrid = () => {
 		<div className="bg-orange-200">
 			<div className="mx-auto max-w-2xl py-5 px-4 sm:px-6 sm:py-10 lg:max-w-7xl lg:px-8">
 				<div className="mx-auto max-w-3xl text-center">
-					<h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Drawing to thread to ???</h2>
+					<SubTitle title="How I go from idea to item, start to finish" />
 					<p className="mt-4 text-gray-500">
 						As a digital creative, your laptop or tablet is at the center of your work. Keep your device safe with a
 						fabric sleeve that matches in quality and looks.

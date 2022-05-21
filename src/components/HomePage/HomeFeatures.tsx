@@ -30,7 +30,7 @@ const HomeFeatures = () => {
 	const features = data.allContentfulHomeFeatures.nodes;
 
 	return (
-		<div className="overflow-hidden bg-orange-200">
+		<section className="overflow-hidden bg-orange-200">
 			<div className="relative mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8">
 				<svg
 					className="absolute top-0 left-full -translate-x-1/2 -translate-y-3/4 transform lg:left-auto lg:right-full lg:translate-x-2/3 lg:translate-y-1/4"
@@ -61,7 +61,7 @@ const HomeFeatures = () => {
 					</div>
 					<dl className="mt-10 space-y-10 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 sm:space-y-0 lg:col-span-2 lg:mt-0">
 						{features.map((feature: FeatureTypes) => (
-							<div key={feature.contentful_id}>
+							<article key={feature.contentful_id}>
 								<dt>
 									<div className="flex h-12 w-12 items-center justify-center rounded-md bg-secondary text-white">
 										{feature.penIcon && penIcon}
@@ -72,12 +72,12 @@ const HomeFeatures = () => {
 									<p className="mt-5 text-lg font-medium leading-6 text-gray-900">{feature.title}</p>
 								</dt>
 								<dd className="mt-2 text-base text-gray-500">{feature.body}</dd>
-							</div>
+							</article>
 						))}
 					</dl>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 
