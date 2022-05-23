@@ -1,78 +1,64 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
+import Paragraph from '../Typography/Paragraph';
 import SubTitle from '../Typography/SubTitle';
 
-const features = [
-	{
-		name: 'Minimal and thoughtful',
-		id: 1,
-		description:
-			'Our laptop sleeve is compact and precisely fits 13" devices. The zipper allows you to access the interior with ease, and the front pouch provides a convenient place for your charger cable.',
-		imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-07-detail-01.jpg',
-		imageAlt: 'White canvas laptop sleeve with gray felt interior, silver zipper, and tan leather zipper pull.',
-	},
-	{
-		name: 'Refined details',
-		id: 2,
-		description:
-			'We design every detail with the best materials and finishes. This laptop sleeve features durable canvas with double-stitched construction, a felt interior, and a high quality zipper that hold up to daily use.',
-		imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-07-detail-02.jpg',
-		imageAlt: 'Detail of zipper pull with tan leather and silver rivet.',
-	},
-	{
-		name: 'Minimal and thoughtful',
-		id: 3,
-		description:
-			'Our laptop sleeve is compact and precisely fits 13" devices. The zipper allows you to access the interior with ease, and the front pouch provides a convenient place for your charger cable.',
-		imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-07-detail-01.jpg',
-		imageAlt: 'White canvas laptop sleeve with gray felt interior, silver zipper, and tan leather zipper pull.',
-	},
-	{
-		name: 'Refined details',
-		id: 4,
-		description:
-			'We design every detail with the best materials and finishes. This laptop sleeve features durable canvas with double-stitched construction, a felt interior, and a high quality zipper that hold up to daily use.',
-		imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-07-detail-02.jpg',
-		imageAlt: 'Detail of zipper pull with tan leather and silver rivet.',
-	},
-];
+interface ProcessTypes {
+	title: string;
+	body: {
+		body: string;
+	};
+	contentful_id: string;
+	image: {
+		gatsbyImageData: IGatsbyImageData;
+	};
+}
 
 function classNames(...classes: any) {
 	return classes.filter(Boolean).join(' ');
 }
 
 const ProcessGrid = () => {
+	const data = useStaticQuery(query);
+	const processes = data.allContentfulProcessGrid.nodes;
+
 	return (
 		<div className="bg-orange-200">
-			<div className="mx-auto max-w-2xl py-5 px-4 sm:px-6 sm:py-10 lg:max-w-7xl lg:px-8">
+			<div className="mx-auto max-w-2xl py-5 px-4 font-roman sm:px-6 sm:py-10 lg:max-w-7xl lg:px-8">
 				<div className="mx-auto max-w-3xl text-center">
-					<SubTitle title="How I go from idea to item, start to finish" />
-					<p className="mt-4 text-gray-500">
-						As a digital creative, your laptop or tablet is at the center of your work. Keep your device safe with a
-						fabric sleeve that matches in quality and looks.
-					</p>
+					<SubTitle title="How I go from idea to item, start to finish..." />
+					<Paragraph text="Given the fact that each product is made personally by me, it takes time to craft each item. No mechanical aid other than my trusty sewing machine. Needles, scissors, rulers, you name it, I use it." />
 				</div>
 
 				<div className="mt-16 space-y-16">
-					{features.map((feature, featureIdx) => (
-						<div key={feature.id} className="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8">
+					{processes.map((process: ProcessTypes, processIdx: any) => (
+						<div
+							key={process.contentful_id}
+							className="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8"
+						>
 							<div
 								className={classNames(
-									featureIdx % 2 === 0 ? 'lg:col-start-1' : 'lg:col-start-8 xl:col-start-9',
-									'mt-6 lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4',
+									processIdx % 2 === 0 ? 'lg:col-start-1' : 'lg:col-start-8 xl:col-start-9',
+									'mt-6  lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4',
 								)}
 							>
-								<h3 className="text-lg font-medium text-gray-900">{feature.name}</h3>
-								<p className="mt-2 text-sm text-gray-500">{feature.description}</p>
+								<SubTitle title={process.title} />
+								<Paragraph text={process.body.body} />
 							</div>
 							<div
 								className={classNames(
-									featureIdx % 2 === 0 ? 'lg:col-start-6 xl:col-start-5' : 'lg:col-start-1',
+									processIdx % 2 === 0 ? 'lg:col-start-6 xl:col-start-5' : 'lg:col-start-1',
 									'flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8',
 								)}
 							>
-								<div className="aspect-w-5 aspect-h-2 overflow-hidden rounded-lg bg-gray-100">
-									<img src={feature.imageSrc} alt={feature.imageAlt} className="object-cover object-center" />
+								<div className="aspect-w-4 aspect-h-2 overflow-hidden rounded-lg bg-gray-100">
+									<GatsbyImage
+										image={process.image.gatsbyImageData}
+										alt={process.title}
+										className="object-cover object-center"
+									/>
 								</div>
 							</div>
 						</div>
@@ -84,3 +70,21 @@ const ProcessGrid = () => {
 };
 
 export default ProcessGrid;
+
+const query = graphql`
+	{
+		allContentfulProcessGrid(sort: { fields: createdAt, order: ASC }) {
+			nodes {
+				title
+				body {
+					body
+				}
+				contentful_id
+				image {
+					gatsbyImageData(placeholder: TRACED_SVG, layout: CONSTRAINED)
+				}
+				imageAlt
+			}
+		}
+	}
+`;

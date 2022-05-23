@@ -9,13 +9,7 @@ const ProcessPage = () => {
 	return (
 		<Layout>
 			<SEO title="Process" />
-			<main className="flex flex-col items-start justify-start bg-orange-200 pb-5">
-				<section className="sm:mt-15 mx-auto mt-5 max-w-7xl">
-					<div className="text-center">
-						<Title title="The Process" />
-					</div>
-				</section>
-			</main>
+			<Title title="The Process" />
 			<ProcessGrid />
 		</Layout>
 	);
