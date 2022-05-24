@@ -4,12 +4,14 @@ import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
 import Paragraph from '../Typography/Paragraph';
 import SubTitle from '../Typography/SubTitle';
+import ProcessNav from './ProcessNav';
 
 interface ProcessTypes {
 	title: string;
 	body: {
 		body: string;
 	};
+	id: string;
 	contentful_id: string;
 	image: {
 		gatsbyImageData: IGatsbyImageData;
@@ -25,16 +27,18 @@ const ProcessGrid = () => {
 	const processes = data.allContentfulProcessGrid.nodes;
 
 	return (
-		<div className="bg-orange-200">
+		<section className="bg-orange-200">
 			<div className="mx-auto max-w-2xl py-5 px-4 font-roman sm:px-6 sm:py-10 lg:max-w-7xl lg:px-8">
 				<div className="mx-auto max-w-3xl text-center">
 					<SubTitle title="How I go from idea to item, start to finish..." />
 					<Paragraph text="Given the fact that each product is made personally by me, it takes time to craft each item. No mechanical aid other than my trusty sewing machine. Needles, scissors, rulers, you name it, I use it." />
+					<ProcessNav />
 				</div>
 
 				<div className="mt-16 space-y-16">
 					{processes.map((process: ProcessTypes, processIdx: any) => (
 						<div
+							id={`${process.contentful_id}`}
 							key={process.contentful_id}
 							className="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8"
 						>
@@ -65,7 +69,7 @@ const ProcessGrid = () => {
 					))}
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

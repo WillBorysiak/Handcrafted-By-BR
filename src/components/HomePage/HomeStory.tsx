@@ -1,10 +1,11 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 
 import SubTitle from '../Typography/SubTitle';
 import Heading from '../Typography/Heading';
 import ParagraphTitle from '../Typography/ParagraphTitle';
-import { StaticImage } from 'gatsby-plugin-image';
+
 import Paragraph from '../Typography/Paragraph';
 
 interface StoryTypes {
@@ -35,7 +36,7 @@ const HomeStory = () => {
 							<div className="flex-shrink-0">
 								<StaticImage
 									className="h-48 w-full object-cover"
-									src="../../assets/images/IMG_4910.jpg"
+									src="../../assets/images/HomeHero/home1.jpg"
 									alt="Placeholder image"
 									placeholder="tracedSVG"
 								/>
