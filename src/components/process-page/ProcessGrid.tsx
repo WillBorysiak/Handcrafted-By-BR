@@ -38,14 +38,14 @@ const ProcessGrid = () => {
 
 	return (
 		<section className="bg-orange-200">
-			<div className="mx-auto max-w-2xl px-4 pt-3 font-roman sm:px-6 sm:py-5 lg:max-w-7xl lg:px-8">
+			<div className="mx-auto max-w-2xl px-4 pb-5 font-roman sm:px-6 sm:py-5 lg:max-w-7xl lg:px-8">
 				<div className="mx-auto max-w-3xl text-center">
 					<SubTitle title="How I go from idea to item, start to finish..." />
 					<Paragraph text="Given the fact that each product is made personally by me, it takes time to craft each item. No mechanical aid other than my trusty sewing machine. Needles, scissors, rulers, you name it, I use it." />
 					<ProcessNav selected={selected} setSelected={setSelected} />
 				</div>
 
-				<div className="mt-5 space-y-10">
+				<div className="mt-5 space-y-5 ">
 					{processes.map((process: ProcessTypes, processIdx: any) => (
 						<div
 							id={`${process.contentful_id}`}
@@ -75,6 +75,7 @@ const ProcessGrid = () => {
 									/>
 								</div>
 							</div>
+							<div className="mb-5 border-b border-dashed border-white sm:hidden" />
 						</div>
 					))}
 				</div>

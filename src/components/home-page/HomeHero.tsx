@@ -40,37 +40,14 @@ const HomeHero = () => {
 									<div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
 										<div className="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
 											<StaticImage
-												src="../../assets/images/HomeHero/home2.jpg"
+												src="../../assets/images/HomeHero/belper.jpg"
 												alt=""
 												className="h-full w-full object-cover object-center"
 											/>
 										</div>
 										<div className="h-64 w-44 overflow-hidden rounded-lg">
 											<StaticImage
-												src="../../assets/images/HomeHero/home3.jpg"
-												alt=""
-												className="h-full w-full object-cover object-center"
-											/>
-										</div>
-									</div>
-									<div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-										<div className="h-64 w-44 overflow-hidden rounded-lg">
-											<StaticImage
-												src="../../assets/images/HomeHero/home1.jpg"
-												alt=""
-												className="h-full w-full object-cover object-center"
-											/>
-										</div>
-										<div className="h-64 w-44 overflow-hidden rounded-lg">
-											<StaticImage
-												src="../../assets/images/HomeHero/home5.jpg"
-												alt=""
-												className="h-full w-full object-cover object-center"
-											/>
-										</div>
-										<div className="h-64 w-44 overflow-hidden rounded-lg">
-											<StaticImage
-												src="../../assets/images/HomeHero/home4.jpg"
+												src="../../assets/images/HomeHero/pattern.jpg"
 												alt=""
 												className="h-full w-full object-cover object-center"
 											/>
@@ -79,14 +56,37 @@ const HomeHero = () => {
 									<div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
 										<div className="h-64 w-44 overflow-hidden rounded-lg">
 											<StaticImage
-												src="../../assets/images/HomeHero/home7.jpg"
+												src="../../assets/images/HomeHero/red.jpg"
 												alt=""
 												className="h-full w-full object-cover object-center"
 											/>
 										</div>
 										<div className="h-64 w-44 overflow-hidden rounded-lg">
 											<StaticImage
-												src="../../assets/images/HomeHero/home7.jpg"
+												src="../../assets/images/HomeHero/rabbit.jpg"
+												alt=""
+												className="h-full w-full object-cover object-center"
+											/>
+										</div>
+										<div className="h-64 w-44 overflow-hidden rounded-lg">
+											<StaticImage
+												src="../../assets/images/HomeHero/rocket.jpg"
+												alt=""
+												className="h-full w-full object-cover object-center"
+											/>
+										</div>
+									</div>
+									<div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+										<div className="h-64 w-44 overflow-hidden rounded-lg">
+											<StaticImage
+												src="../../assets/images/HomeHero/robot.jpg"
+												alt=""
+												className="h-full w-full object-cover object-center"
+											/>
+										</div>
+										<div className="h-64 w-44 overflow-hidden rounded-lg">
+											<StaticImage
+												src="../../assets/images/HomeHero/flower.jpg"
 												alt=""
 												className="h-full w-full object-cover object-center"
 											/>

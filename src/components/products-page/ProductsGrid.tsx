@@ -7,8 +7,6 @@ const products = [
 	{
 		id: 1,
 		name: 'Focus Paper Refill',
-		href: '#',
-		price: '$13',
 		description: '3 sizes available',
 		imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-01-image-card-01.jpg',
 		imageAlt: 'Person using a pen to cross a task off a productivity paper card.',
@@ -16,8 +14,6 @@ const products = [
 	{
 		id: 2,
 		name: 'Focus Card Holder',
-		href: '#',
-		price: '$64',
 		description: 'Walnut',
 		imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-01-image-card-02.jpg',
 		imageAlt: 'Paper card sitting upright in walnut card holder on desk.',
@@ -25,8 +21,6 @@ const products = [
 	{
 		id: 3,
 		name: 'Focus Carry Case',
-		href: '#',
-		price: '$32',
 		description: 'Heather Gray',
 		imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-01-image-card-03.jpg',
 		imageAlt: 'Textured gray felt pouch for paper cards with snap button flap and elastic pen holder loop.',
@@ -34,8 +28,6 @@ const products = [
 	{
 		id: 4,
 		name: 'Focus Paper Refill',
-		href: '#',
-		price: '$13',
 		description: '3 sizes available',
 		imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-01-image-card-01.jpg',
 		imageAlt: 'Person using a pen to cross a task off a productivity paper card.',
@@ -43,8 +35,6 @@ const products = [
 	{
 		id: 5,
 		name: 'Focus Card Holder',
-		href: '#',
-		price: '$64',
 		description: 'Walnut',
 		imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-01-image-card-02.jpg',
 		imageAlt: 'Paper card sitting upright in walnut card holder on desk.',
@@ -52,8 +42,6 @@ const products = [
 	{
 		id: 6,
 		name: 'Focus Carry Case',
-		href: '#',
-		price: '$32',
 		description: 'Heather Gray',
 		imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-01-image-card-03.jpg',
 		imageAlt: 'Textured gray felt pouch for paper cards with snap button flap and elastic pen holder loop.',
@@ -62,7 +50,7 @@ const products = [
 
 const ProductGrid = () => {
 	return (
-		<div className="bg-orange-200">
+		<section className="bg-orange-200">
 			<div className="mx-auto max-w-2xl py-5 px-4 sm:py-10 sm:px-6 lg:max-w-7xl lg:px-8">
 				<h2 id="products-heading" className="sr-only">
 					Products
@@ -73,23 +61,23 @@ const ProductGrid = () => {
 
 				<div className="grid grid-cols-1 gap-y-5 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
 					{products.map(product => (
-						<a key={product.id} href={product.href} className="group">
+						<article key={product.id} className="group">
 							<div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg sm:aspect-w-2 sm:aspect-h-3">
 								<img
 									src={product.imageSrc}
 									alt={product.imageAlt}
-									className="h-full w-full object-cover object-center group-hover:opacity-75"
+									className="h-full w-full object-cover object-center group-hover:opacity-80"
 								/>
 							</div>
 							<div className="flex items-center justify-between">
 								<ParagraphTitle title={product.name} />
 							</div>
 							<p className="mt-1 text-sm italic text-gray-500">{product.description}</p>
-						</a>
+						</article>
 					))}
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 
