@@ -1,15 +1,15 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
-import SubTitle from '../Typography/SubTitle';
-import ParagraphTitle from '../Typography/ParagraphTitle';
+import SubTitle from '../typography/SubTitle';
+import ParagraphTitle from '../typography/ParagraphTitle';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenRuler } from '@fortawesome/pro-thin-svg-icons';
 import { faPlanetRinged } from '@fortawesome/pro-thin-svg-icons';
 import { faScissors } from '@fortawesome/pro-thin-svg-icons';
 import { faRecycle } from '@fortawesome/pro-thin-svg-icons';
-import Paragraph from '../Typography/Paragraph';
+import Paragraph from '../typography/Paragraph';
 
 const penIcon = <FontAwesomeIcon icon={faPenRuler} size="2x" />;
 const scissorsIcon = <FontAwesomeIcon icon={faScissors} size="2x" />;

@@ -2,33 +2,29 @@ import React, { Fragment, useState } from 'react';
 
 import { Listbox, Transition } from '@headlessui/react';
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid';
+import processArray from '../../data/process-nav-data';
 
-const processArray = [
-	{ id: 1, name: 'New Project' },
-	{ id: 2, name: 'Hand Sketched Designs' },
-	{ id: 3, name: 'Creating The Patterns' },
-	{ id: 4, name: 'Selecting Fabrics And Thread' },
-	{ id: 5, name: 'Cutting Out The Fabric Pieces' },
-	{ id: 6, name: 'Sewing The Product Together - Part 1' },
-	{ id: 7, name: 'Sewing The Product Together - Part 2' },
-	{ id: 8, name: 'Finished Product' },
-];
+interface ProcessNavPropTypes {
+	selected: {
+		id: number;
+		name: string;
+		contentful_id: string;
+	};
+	setSelected: any;
+}
 
 function classNames(...classes: any) {
 	return classes.filter(Boolean).join(' ');
 }
 
-const ProcessNav = () => {
-	const [selected, setSelected] = useState(processArray[0]);
-	console.log(selected);
-
+const ProcessNav = (props: ProcessNavPropTypes) => {
 	return (
-		<Listbox value={selected} onChange={setSelected}>
+		<Listbox value={props.selected} onChange={props.setSelected}>
 			{({ open }) => (
 				<>
 					<div className="relative mt-1">
 						<Listbox.Button className="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-secondary focus:outline-none focus:ring-1 focus:ring-secondary sm:text-sm">
-							<span className="block truncate">{selected.name}</span>
+							<span className="block truncate">{props.selected.name}</span>
 							<span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
 								<SelectorIcon className="h-5 w-5 text-secondary" aria-hidden="true" />
 							</span>
@@ -44,7 +40,6 @@ const ProcessNav = () => {
 							<Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-gray-200 py-1 text-lg shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
 								{processArray.map(process => (
 									<Listbox.Option
-										id={''}
 										key={process.id}
 										className={({ active }) =>
 											classNames(

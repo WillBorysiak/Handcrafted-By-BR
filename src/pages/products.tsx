@@ -2,8 +2,8 @@ import React from 'react';
 
 import Layout from '../layout/Layout';
 import SEO from '../layout/SEO';
-import Title from '../components/Typography/Title';
-import ProductGrid from '../components/ProductsPage/ProductsGrid';
+import Title from '../components/typography/Title';
+import ProductGrid from '../components/products-page/ProductsGrid';
 
 const ProductsPage = () => {
 	return (

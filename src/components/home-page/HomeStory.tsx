@@ -2,11 +2,11 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 
-import SubTitle from '../Typography/SubTitle';
-import Heading from '../Typography/Heading';
-import ParagraphTitle from '../Typography/ParagraphTitle';
+import SubTitle from '../typography/SubTitle';
+import Heading from '../typography/Heading';
+import ParagraphTitle from '../typography/ParagraphTitle';
 
-import Paragraph from '../Typography/Paragraph';
+import Paragraph from '../typography/Paragraph';
 
 interface StoryTypes {
 	title: string;

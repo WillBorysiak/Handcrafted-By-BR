@@ -2,10 +2,10 @@ import React from 'react';
 
 import Layout from '../layout/Layout';
 import SEO from '../layout/SEO';
-import Title from '../components/Typography/Title';
-import HomeHero from '../components/HomePage/HomeHero';
-import HomeStory from '../components/HomePage/HomeStory';
-import HomeFeatures from '../components/HomePage/HomeFeatures';
+import Title from '../components/typography/Title';
+import HomeHero from '../components/home-page/HomeHero';
+import HomeStory from '../components/home-page/HomeStory';
+import HomeFeatures from '../components/home-page/HomeFeatures';
 
 const HomePage = () => {
 	return (

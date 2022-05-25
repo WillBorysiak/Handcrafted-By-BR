@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
-import Paragraph from '../Typography/Paragraph';
-import SubTitle from '../Typography/SubTitle';
+import Paragraph from '../typography/Paragraph';
+import SubTitle from '../typography/SubTitle';
 import ProcessNav from './ProcessNav';
+import processArray from '../../data/process-nav-data';
+import useDidMountEffect from '../hooks/useDidMountEffect';
 
 interface ProcessTypes {
 	title: string;
@@ -16,6 +18,7 @@ interface ProcessTypes {
 	image: {
 		gatsbyImageData: IGatsbyImageData;
 	};
+	imageAlt: string;
 }
 
 function classNames(...classes: any) {
@@ -23,19 +26,26 @@ function classNames(...classes: any) {
 }
 
 const ProcessGrid = () => {
+	const [selected, setSelected] = useState(processArray[0]);
+
+	const scrollToProcess = () => {
+		document.getElementById(selected.contentful_id)?.scrollIntoView({ behavior: 'smooth' });
+	};
+	useDidMountEffect(scrollToProcess, [selected]);
+
 	const data = useStaticQuery(query);
 	const processes = data.allContentfulProcessGrid.nodes;
 
 	return (
 		<section className="bg-orange-200">
-			<div className="mx-auto max-w-2xl py-5 px-4 font-roman sm:px-6 sm:py-10 lg:max-w-7xl lg:px-8">
+			<div className="mx-auto max-w-2xl px-4 pt-3 font-roman sm:px-6 sm:py-5 lg:max-w-7xl lg:px-8">
 				<div className="mx-auto max-w-3xl text-center">
 					<SubTitle title="How I go from idea to item, start to finish..." />
 					<Paragraph text="Given the fact that each product is made personally by me, it takes time to craft each item. No mechanical aid other than my trusty sewing machine. Needles, scissors, rulers, you name it, I use it." />
-					<ProcessNav />
+					<ProcessNav selected={selected} setSelected={setSelected} />
 				</div>
 
-				<div className="mt-16 space-y-16">
+				<div className="mt-5 space-y-10">
 					{processes.map((process: ProcessTypes, processIdx: any) => (
 						<div
 							id={`${process.contentful_id}`}
@@ -60,7 +70,7 @@ const ProcessGrid = () => {
 								<div className="aspect-w-4 aspect-h-2 overflow-hidden rounded-lg bg-gray-100">
 									<GatsbyImage
 										image={process.image.gatsbyImageData}
-										alt={process.title}
+										alt={process.imageAlt}
 										className="object-cover object-center"
 									/>
 								</div>

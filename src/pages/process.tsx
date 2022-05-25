@@ -2,8 +2,8 @@ import React from 'react';
 
 import Layout from '../layout/Layout';
 import SEO from '../layout/SEO';
-import Title from '../components/Typography/Title';
-import ProcessGrid from '../components/ProcessPage/ProcessGrid';
+import Title from '../components/typography/Title';
+import ProcessGrid from '../components/process-page/ProcessGrid';
 
 const ProcessPage = () => {
 	return (

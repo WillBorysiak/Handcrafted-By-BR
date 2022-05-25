@@ -1,7 +1,7 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
-import SubTitle from '../Typography/SubTitle';
+import SubTitle from '../typography/SubTitle';
 
 const HomeHero = () => {
 	return (

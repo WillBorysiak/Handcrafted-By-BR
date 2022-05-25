@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ParagraphTitle from '../Typography/ParagraphTitle';
-import SubTitle from '../Typography/SubTitle';
+import ParagraphTitle from '../typography/ParagraphTitle';
+import SubTitle from '../typography/SubTitle';
 
 const products = [
 	{
