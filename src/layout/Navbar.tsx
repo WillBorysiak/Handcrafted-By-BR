@@ -37,7 +37,7 @@ export default function Example() {
 												to={`${item.pageLink}`}
 												activeStyle={{ color: '#fed7aa', backgroundColor: '#374151' }}
 												className={classNames(
-													'rounded-md px-10 py-5  text-center text-sm font-medium text-gray-300 hover:text-gray-100',
+													'rounded-md px-10  py-5 text-center text-sm font-medium text-gray-300 hover:text-gray-100',
 												)}
 												aria-current={item.current ? 'page' : undefined}
 											>

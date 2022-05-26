@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface ParagraphTypes {
-	text: string;
+	text: string | null;
 }
 
 const Paragraph = (props: ParagraphTypes) => {

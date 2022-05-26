@@ -22,7 +22,7 @@ interface StoryTypes {
 const HomeStory = () => {
 	const data = useStaticQuery(query);
 	const stories = data.allContentfulHomeStory.nodes;
-	console.log(stories);
+
 	return (
 		<section className="relative bg-stone-200 px-4 pt-5 pb-5 font-roman sm:px-6 lg:px-8 lg:pb-10 lg:pt-5">
 			<div className="absolute inset-0">

@@ -41,7 +41,6 @@ const ProcessGrid = () => {
 			<div className="mx-auto max-w-2xl px-4 pb-5 font-roman sm:px-6 sm:py-5 lg:max-w-7xl lg:px-8">
 				<div className="mx-auto max-w-3xl text-center">
 					<SubTitle title="How I go from idea to item, start to finish..." />
-					<Paragraph text="Given the fact that each product is made personally by me, it takes time to craft each item. No mechanical aid other than my trusty sewing machine. Needles, scissors, rulers, you name it, I use it." />
 					<ProcessNav selected={selected} setSelected={setSelected} />
 				</div>
 
@@ -67,7 +66,7 @@ const ProcessGrid = () => {
 									'flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8',
 								)}
 							>
-								<div className="aspect-w-4 aspect-h-2 overflow-hidden rounded-lg bg-gray-100">
+								<div className="aspect-w-4 aspect-h-2 overflow-hidden rounded-sm bg-gray-100 ">
 									<GatsbyImage
 										image={process.image.gatsbyImageData}
 										alt={process.imageAlt}

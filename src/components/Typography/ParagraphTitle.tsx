@@ -6,7 +6,7 @@ interface ParagraphTitle {
 
 const ParagraphTitle = (props: ParagraphTitle) => {
 	return (
-		<h4 id="paragraph-title" className="mt-3 text-xl font-semibold text-gray-900">
+		<h4 id="paragraph-title" className="text-xl font-semibold text-gray-900">
 			{props.title}
 		</h4>
 	);
