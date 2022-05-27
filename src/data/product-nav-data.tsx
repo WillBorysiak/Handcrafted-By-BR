@@ -1,20 +1,39 @@
-import React from 'react';
+export const sortOptions = [
+	{ name: 'Most Popular', href: 'popular', current: true },
+	{ name: 'A-Z', href: 'azDown', current: false },
+	{ name: 'Z-A', href: 'azUp', current: false },
+];
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReel } from '@fortawesome/pro-thin-svg-icons';
-import { faStore } from '@fortawesome/pro-thin-svg-icons';
-import { faHouseChimneyBlank } from '@fortawesome/pro-thin-svg-icons';
-import { faThoughtBubble } from '@fortawesome/pro-thin-svg-icons';
+export const subCategories = [
+	{ name: 'Tote Bags', href: '#' },
+	{ name: 'Toys', href: '#' },
+	{ name: 'Toy Bags', href: '#' },
+	{ name: 'Kids Bags', href: '#' },
+	{ name: 'Shopping Bags', href: '#' },
+	{ name: 'Clothing', href: '#' },
+	{ name: 'Soft Furnishing', href: '#' },
+];
 
-const storeIcon = <FontAwesomeIcon className="pr-2" icon={faStore} size="3x" />;
-
-export const tabs = [
-	{ name: 'All Products', current: true, icon: storeIcon },
-	{ name: 'Tote Bags', current: false, icon: storeIcon },
-	{ name: 'Toy', current: false, icon: storeIcon },
-	{ name: 'Toy Bags', current: false, icon: storeIcon },
-	{ name: 'Kids Bags', current: false, icon: storeIcon },
-	{ name: 'Shopping Bag', current: false, icon: storeIcon },
-	{ name: 'Soft Furnishing', current: false, icon: storeIcon },
-	{ name: 'Clothing', current: false, icon: storeIcon },
+export const filters = [
+	{
+		id: 'color',
+		name: 'Color',
+		options: [
+			{ value: 'any', label: 'Any', checked: true },
+			{ value: 'white', label: 'White', checked: false },
+			{ value: 'beige', label: 'Beige', checked: false },
+			{ value: 'blue', label: 'Blue', checked: false },
+			{ value: 'brown', label: 'Brown', checked: false },
+			{ value: 'green', label: 'Green', checked: false },
+			{ value: 'purple', label: 'Purple', checked: false },
+		],
+	},
+	{
+		id: 'category',
+		name: 'Category',
+		options: [
+			{ value: 'general', label: 'General', checked: true },
+			{ value: 'seasonal', label: 'Seasonal', checked: false },
+		],
+	},
 ];

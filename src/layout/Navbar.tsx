@@ -11,10 +11,10 @@ function classNames(...classes: any) {
 
 export default function Example() {
 	return (
-		<Disclosure as="nav" className="bg-secondary">
+		<Disclosure as="nav" className="bg-secondary sm:pb-2">
 			{({ open }) => (
 				<>
-					<div className="mx-auto max-w-7xl px-2 pb-2 sm:px-6 lg:px-8">
+					<div className="mx-auto max-w-7xl px-2 pb-2 sm:p-2 sm:px-6 lg:px-8">
 						<div className="relative flex h-16 items-center justify-evenly">
 							<div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
 								{/* Mobile menu button*/}
@@ -37,11 +37,11 @@ export default function Example() {
 												to={`${item.pageLink}`}
 												activeStyle={{ color: '#fed7aa', backgroundColor: '#374151' }}
 												className={classNames(
-													'rounded-md px-10  py-5 text-center text-sm font-medium text-gray-300 hover:text-gray-100',
+													'rounded-md px-10 py-5 text-center text-sm font-medium text-gray-300 hover:text-gray-100 sm:text-xs',
 												)}
 												aria-current={item.current ? 'page' : undefined}
 											>
-												<h2>{item.name}</h2>
+												<h2 className="pb-2">{item.name}</h2>
 												{item.icon}
 											</Link>
 										))}

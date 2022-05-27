@@ -2,6 +2,10 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
+interface ProductGridTypes {
+	sortOrder: string;
+}
+
 interface ProductTypes {
 	title: string;
 	quote: string | null;
@@ -12,9 +16,10 @@ interface ProductTypes {
 	};
 }
 
-const ProductGrid = () => {
+const ProductGrid = (props: ProductGridTypes) => {
 	const data = useStaticQuery(query);
 	const products = data.allContentfulProductGrid.nodes;
+	console.log(props.sortOrder);
 
 	return (
 		<div className="bg-primary pb-5">
