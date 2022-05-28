@@ -14,7 +14,9 @@ function classNames(...classes: any) {
 const ProductsFilter = () => {
 	const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 	const [sortOrder, setSortOrder] = useState('popular');
+	const [filterItemType, setFilterItemType] = useState('all');
 	console.log(sortOrder);
+	console.log(filterItemType);
 	return (
 		<div className="bg-primary">
 			<div>
@@ -64,10 +66,15 @@ const ProductsFilter = () => {
 										<h3 className="sr-only">Categories</h3>
 										<ul role="list" className="px-2 py-3 font-medium text-primary">
 											{subCategories.map(category => (
-												<li key={category.name}>
-													<a href={category.href} className="block px-2 py-3">
-														{category.name}
-													</a>
+												<li
+													key={category.name}
+													onClick={() => {
+														subCategories.forEach(item => (item.current = false));
+														category.current = true;
+														setFilterItemType(category.href);
+													}}
+												>
+													<a className="block px-2 py-3">{category.name}</a>
 												</li>
 											))}
 										</ul>
@@ -157,16 +164,14 @@ const ProductsFilter = () => {
 													{({ active }) => (
 														<li
 															onClick={() => {
-																const currentOption = sortOptions.find(item => item.current === true);
-																currentOption.current = false;
-																const newOption = sortOptions.find(item => item.href === option.href);
-																newOption.current = true;
+																sortOptions.forEach(item => (item.current = false));
+																option.current = true;
 																setSortOrder(option.href);
 															}}
 															className={classNames(
 																option.current ? 'font-medium text-secondary' : 'text-gray-500',
-																active ? 'bg-gray-200' : '',
-																'block px-4 py-2 text-sm',
+																active ? 'bg-gray-200 hover:cursor-pointer' : '',
+																'r r block px-4 py-2 text-sm',
 															)}
 														>
 															{option.name}
@@ -185,6 +190,9 @@ const ProductsFilter = () => {
 								<span className="sr-only">View grid</span>
 								<ViewGridIcon className="h-5 w-5" aria-hidden="true" />
 							</button>
+
+							{/* Open Filter Button */}
+
 							<button
 								type="button"
 								className="-m-2 ml-4 p-2 text-secondary hover:text-gray-500 sm:ml-6 lg:hidden"
@@ -209,8 +217,18 @@ const ProductsFilter = () => {
 								<h3 className="sr-only">Categories</h3>
 								<ul role="list" className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-secondary">
 									{subCategories.map(category => (
-										<li key={category.name}>
-											<a href={category.href}>{category.name}</a>
+										<li
+											key={category.name}
+											className={classNames(
+												category.current ? 'font-bold text-secondary' : 'text-gray-500 hover:cursor-pointer',
+											)}
+											onClick={() => {
+												subCategories.forEach(item => (item.current = false));
+												category.current = true;
+												setFilterItemType(category.href);
+											}}
+										>
+											<a>{category.name}</a>
 										</li>
 									))}
 								</ul>
@@ -246,7 +264,7 @@ const ProductsFilter = () => {
 																	defaultValue={option.value}
 																	type="checkbox"
 																	defaultChecked={option.checked}
-																	className="h-4 w-4 rounded border-gray-300 text-secondary focus:ring-secondary"
+																	className="h-4 w-4 rounded border-gray-300 accent-secondary focus:ring-secondary"
 																/>
 																<label
 																	htmlFor={`filter-${section.id}-${optionIdx}`}
@@ -266,7 +284,7 @@ const ProductsFilter = () => {
 
 							{/* Product Gird Output */}
 							<div className="lg:col-span-3">
-								<ProductsGrid sortOrder={sortOrder} />
+								<ProductsGrid />
 							</div>
 						</div>
 					</section>
