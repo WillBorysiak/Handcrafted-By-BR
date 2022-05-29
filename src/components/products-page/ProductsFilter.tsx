@@ -1,27 +1,61 @@
 import React from 'react';
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useReducer } from 'react';
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';
 import { ChevronDownIcon, FilterIcon, MinusSmIcon, PlusSmIcon, ViewGridIcon } from '@heroicons/react/solid';
 
 import ProductsGrid from './ProductsGrid';
-import { subCategories, sortOptions, filters } from '../../data/product-nav-data';
-import colorFilters from '../utils/colorFilters';
-import categoryFilters from '../utils/categoryFilters';
+import { productTypes, sortOptions, filters } from '../../data/product-nav-data';
 
 function classNames(...classes: any) {
 	return classes.filter(Boolean).join(' ');
 }
 
+interface FilterAction {
+	type: string;
+	payload: string | string[];
+}
+
+const initialState = { sort: 'popular', filterType: 'all', filterColor: ['any'], filterCategory: ['general'] };
+
+function reducer(state: any, action: FilterAction) {
+	switch (action.type) {
+		case 'sort':
+			return {
+				...state,
+				sort: action.payload,
+			};
+		case 'filterType':
+			return {
+				...state,
+				filterType: action.payload,
+			};
+		case 'filterColor':
+			return {
+				...state,
+				filterColor: action.payload,
+			};
+		case 'filterCategory':
+			return {
+				...state,
+				filterCategory: action.payload,
+			};
+
+		default:
+			return state;
+	}
+}
+
 const ProductsFilter = () => {
 	const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-	// Sort / Filter State
-	const [sortOrder, setSortOrder] = useState('popular');
-	const [filterItemType, setFilterItemType] = useState('all');
-	const [filterItemColor, setFilterItemColor] = useState('any');
-	console.log(sortOrder);
-	console.log(filterItemType);
-	console.log(filterItemColor);
+	const [state, dispatch] = useReducer(reducer, initialState);
+
+	console.log(state);
+	console.log(state.sort);
+	console.log(state.filterType);
+	console.log(state.filterColor);
+	console.log(state.filterCategory);
+	console.log('-------');
 
 	return (
 		<div className="bg-primary">
@@ -51,7 +85,7 @@ const ProductsFilter = () => {
 								leaveFrom="translate-x-0"
 								leaveTo="translate-x-full"
 							>
-								{/* Filter Title and Button */}
+								{/* Mobile Filter Title and Button */}
 
 								<Dialog.Panel className="relative ml-auto flex h-full  w-full max-w-xs flex-col overflow-y-auto bg-secondary py-4 pb-12 shadow-xl">
 									<div className="flex items-center justify-between px-4">
@@ -71,16 +105,17 @@ const ProductsFilter = () => {
 									<form className="mt-4 border-t border-gray-200">
 										<h3 className="sr-only">Categories</h3>
 										<ul role="list" className="px-2 py-3 font-medium text-primary">
-											{subCategories.map(category => (
+											{productTypes.map(type => (
 												<li
-													key={category.name}
+													className={classNames(type.current ? 'border-b-4 border-primary font-bold' : '')}
+													key={type.name}
 													onClick={() => {
-														subCategories.forEach(item => (item.current = false));
-														category.current = true;
-														setFilterItemType(category.value);
+														productTypes.forEach(item => (item.current = false));
+														type.current = true;
+														dispatch({ type: 'filterType', payload: type.value });
 													}}
 												>
-													<a className="block px-2 py-3">{category.name}</a>
+													<a className="block px-2 py-3">{type.name}</a>
 												</li>
 											))}
 										</ul>
@@ -113,7 +148,51 @@ const ProductsFilter = () => {
 																			defaultValue={option.value}
 																			type="checkbox"
 																			defaultChecked={option.checked}
-																			className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+																			className="h-4 w-4 rounded border-gray-300 text-primary accent-primary focus:ring-primary "
+																			onInput={() => {
+																				// Color Filters
+																				if (section.id === 'color') {
+																					const colorState: string[] = [];
+																					if (option.checked === false) {
+																						option.checked = true;
+																						section.options.forEach(item => {
+																							if (item.checked === true) colorState.push(item.value);
+																						});
+
+																						dispatch({ type: 'filterColor', payload: colorState });
+																						return;
+																					}
+																					if (option.checked === true) {
+																						option.checked = false;
+																						section.options.forEach(item => {
+																							if (item.checked === true) colorState.push(item.value);
+																						});
+																						dispatch({ type: 'filterColor', payload: colorState });
+																						return;
+																					}
+																				}
+
+																				// Category Filters
+																				if (section.id === 'category') {
+																					const categoryState: string[] = [];
+																					if (option.checked === false) {
+																						option.checked = true;
+																						section.options.forEach(item => {
+																							if (item.checked === true) categoryState.push(item.value);
+																						});
+																						dispatch({ type: 'filterCategory', payload: categoryState });
+																						return;
+																					}
+																					if (option.checked === true) {
+																						option.checked = false;
+																						section.options.forEach(item => {
+																							if (item.checked === true) categoryState.push(item.value);
+																						});
+																						dispatch({ type: 'filterCategory', payload: categoryState });
+																						return;
+																					}
+																				}
+																			}}
 																		/>
 																		<label
 																			htmlFor={`filter-mobile-${section.id}-${optionIdx}`}
@@ -172,7 +251,7 @@ const ProductsFilter = () => {
 															onClick={() => {
 																sortOptions.forEach(item => (item.current = false));
 																option.current = true;
-																setSortOrder(option.value);
+																dispatch({ type: 'sort', payload: option.value });
 															}}
 															className={classNames(
 																option.current ? 'font-medium text-secondary' : 'text-gray-500',
@@ -222,19 +301,19 @@ const ProductsFilter = () => {
 							<form className="hidden lg:block">
 								<h3 className="sr-only">Categories</h3>
 								<ul role="list" className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-secondary">
-									{subCategories.map(category => (
+									{productTypes.map(type => (
 										<li
-											key={category.name}
+											key={type.name}
 											className={classNames(
-												category.current ? 'font-bold text-secondary' : 'text-gray-500 hover:cursor-pointer',
+												type.current ? 'font-bold text-secondary' : 'text-gray-500 hover:cursor-pointer',
 											)}
 											onClick={() => {
-												subCategories.forEach(item => (item.current = false));
-												category.current = true;
-												setFilterItemType(category.value);
+												productTypes.forEach(item => (item.current = false));
+												type.current = true;
+												dispatch({ type: 'filterType', payload: type.value });
 											}}
 										>
-											<a>{category.name}</a>
+											<a>{type.name}</a>
 										</li>
 									))}
 								</ul>
@@ -274,11 +353,45 @@ const ProductsFilter = () => {
 																	onInput={() => {
 																		// Color Filters
 																		if (section.id === 'color') {
-																			colorFilters(section, option);
+																			const colorState: string[] = [];
+																			if (option.checked === false) {
+																				option.checked = true;
+																				section.options.forEach(item => {
+																					if (item.checked === true) colorState.push(item.value);
+																				});
+
+																				dispatch({ type: 'filterColor', payload: colorState });
+																				return;
+																			}
+																			if (option.checked === true) {
+																				option.checked = false;
+																				section.options.forEach(item => {
+																					if (item.checked === true) colorState.push(item.value);
+																				});
+																				dispatch({ type: 'filterColor', payload: colorState });
+																				return;
+																			}
 																		}
+
 																		// Category Filters
 																		if (section.id === 'category') {
-																			categoryFilters(section, option);
+																			const categoryState: string[] = [];
+																			if (option.checked === false) {
+																				option.checked = true;
+																				section.options.forEach(item => {
+																					if (item.checked === true) categoryState.push(item.value);
+																				});
+																				dispatch({ type: 'filterCategory', payload: categoryState });
+																				return;
+																			}
+																			if (option.checked === true) {
+																				option.checked = false;
+																				section.options.forEach(item => {
+																					if (item.checked === true) categoryState.push(item.value);
+																				});
+																				dispatch({ type: 'filterCategory', payload: categoryState });
+																				return;
+																			}
 																		}
 																	}}
 																/>

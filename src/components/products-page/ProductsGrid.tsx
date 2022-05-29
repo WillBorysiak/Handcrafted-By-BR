@@ -2,10 +2,6 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
-// interface ProductGridTypes {
-// 	sortOrder: string;
-// }
-
 interface ProductTypes {
 	title: string;
 	quote: string | null;
@@ -54,11 +50,10 @@ export default ProductGrid;
 
 const query = graphql`
 	{
-		allContentfulProductGrid(sort: { order: ASC, fields: title }) {
+		allContentfulProductGrid(sort: { fields: createdAt, order: ASC }) {
 			nodes {
 				title
 				type
-				quote
 				contentful_id
 				image {
 					gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)

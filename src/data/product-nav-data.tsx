@@ -4,7 +4,7 @@ export const sortOptions = [
 	{ name: 'Z-A', value: 'z_a', current: false },
 ];
 
-export const subCategories = [
+export const productTypes = [
 	{ name: 'All', value: 'all', current: true },
 	{ name: 'Tote Bags', value: 'tote_bags', current: false },
 	{ name: 'Toys', value: 'toys', current: false },
