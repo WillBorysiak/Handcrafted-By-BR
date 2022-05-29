@@ -1,18 +1,18 @@
 export const sortOptions = [
-	{ name: 'Most Popular', href: 'popular', current: true },
-	{ name: 'A-Z', href: 'a_z', current: false },
-	{ name: 'Z-A', href: 'z_a', current: false },
+	{ name: 'Most Popular', value: 'popular', current: true },
+	{ name: 'A-Z', value: 'a_z', current: false },
+	{ name: 'Z-A', value: 'z_a', current: false },
 ];
 
 export const subCategories = [
-	{ name: 'All', href: 'all', current: true },
-	{ name: 'Tote Bags', href: 'tote_bags', current: false },
-	{ name: 'Toys', href: 'toys', current: false },
-	{ name: 'Toy Bags', href: 'toy_bags', current: false },
-	{ name: 'Kids Bags', href: 'kids_bags', current: false },
-	{ name: 'Shopping Bags', href: 'shopping_bags', current: false },
-	{ name: 'Clothing', href: 'clothing', current: false },
-	{ name: 'Soft Furnishing', href: 'soft_furnishing', current: false },
+	{ name: 'All', value: 'all', current: true },
+	{ name: 'Tote Bags', value: 'tote_bags', current: false },
+	{ name: 'Toys', value: 'toys', current: false },
+	{ name: 'Toy Bags', value: 'toy_bags', current: false },
+	{ name: 'Kids Bags', value: 'kids_bags', current: false },
+	{ name: 'Shopping Bags', value: 'shopping_bags', current: false },
+	{ name: 'Clothing', value: 'clothing', current: false },
+	{ name: 'Soft Furnishing', value: 'soft_furnishing', current: false },
 ];
 
 export const filters = [

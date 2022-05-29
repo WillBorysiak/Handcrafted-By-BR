@@ -6,6 +6,8 @@ import { ChevronDownIcon, FilterIcon, MinusSmIcon, PlusSmIcon, ViewGridIcon } fr
 
 import ProductsGrid from './ProductsGrid';
 import { subCategories, sortOptions, filters } from '../../data/product-nav-data';
+import colorFilters from '../utils/colorFilters';
+import categoryFilters from '../utils/categoryFilters';
 
 function classNames(...classes: any) {
 	return classes.filter(Boolean).join(' ');
@@ -13,10 +15,14 @@ function classNames(...classes: any) {
 
 const ProductsFilter = () => {
 	const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+	// Sort / Filter State
 	const [sortOrder, setSortOrder] = useState('popular');
 	const [filterItemType, setFilterItemType] = useState('all');
+	const [filterItemColor, setFilterItemColor] = useState('any');
 	console.log(sortOrder);
 	console.log(filterItemType);
+	console.log(filterItemColor);
+
 	return (
 		<div className="bg-primary">
 			<div>
@@ -71,7 +77,7 @@ const ProductsFilter = () => {
 													onClick={() => {
 														subCategories.forEach(item => (item.current = false));
 														category.current = true;
-														setFilterItemType(category.href);
+														setFilterItemType(category.value);
 													}}
 												>
 													<a className="block px-2 py-3">{category.name}</a>
@@ -166,7 +172,7 @@ const ProductsFilter = () => {
 															onClick={() => {
 																sortOptions.forEach(item => (item.current = false));
 																option.current = true;
-																setSortOrder(option.href);
+																setSortOrder(option.value);
 															}}
 															className={classNames(
 																option.current ? 'font-medium text-secondary' : 'text-gray-500',
@@ -225,7 +231,7 @@ const ProductsFilter = () => {
 											onClick={() => {
 												subCategories.forEach(item => (item.current = false));
 												category.current = true;
-												setFilterItemType(category.href);
+												setFilterItemType(category.value);
 											}}
 										>
 											<a>{category.name}</a>
@@ -265,6 +271,16 @@ const ProductsFilter = () => {
 																	type="checkbox"
 																	defaultChecked={option.checked}
 																	className="h-4 w-4 rounded border-gray-300 accent-secondary focus:ring-secondary"
+																	onInput={() => {
+																		// Color Filters
+																		if (section.id === 'color') {
+																			colorFilters(section, option);
+																		}
+																		// Category Filters
+																		if (section.id === 'category') {
+																			categoryFilters(section, option);
+																		}
+																	}}
 																/>
 																<label
 																	htmlFor={`filter-${section.id}-${optionIdx}`}
