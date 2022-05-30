@@ -8,11 +8,11 @@ interface LayoutPropTypes {
 
 const Layout = (props: LayoutPropTypes) => {
 	return (
-		<>
+		<div>
 			<Navbar />
 			{props.children}
 			<Footer />
-		</>
+		</div>
 	);
 };
 

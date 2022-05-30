@@ -18,9 +18,12 @@ const Footer = () => {
 						</a>
 					</div>
 				</div>
-				<div className="mt-8 md:order-1 md:mt-0">
+				<div className="mt-5 md:order-1 md:mt-0">
 					<h2 className=" text-md text-center font-roman font-extrabold tracking-wider text-orange-200 sm:text-lg ">
-						&copy; 2022 Handcrafted by BarbaraRuth. All rights reserved
+						&copy; 2022 Handcrafted by BarbaraRuth.
+					</h2>
+					<h2 className=" text-md text-center font-roman font-extrabold tracking-wider text-orange-200 sm:text-lg ">
+						All rights reserved.
 					</h2>
 				</div>
 			</div>

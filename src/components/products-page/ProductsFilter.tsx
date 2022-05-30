@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 import { Fragment, useState, useReducer } from 'react';
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';
@@ -6,17 +7,14 @@ import { ChevronDownIcon, FilterIcon, MinusSmIcon, PlusSmIcon, ViewGridIcon } fr
 
 import ProductsGrid from './ProductsGrid';
 import { productTypes, sortOptions, filters } from '../../data/product-nav-data';
-
-function classNames(...classes: any) {
-	return classes.filter(Boolean).join(' ');
-}
+import { classNames } from '../utils/classes';
 
 interface FilterAction {
 	type: string;
-	payload: string | string[];
+	payload: string | string[] | undefined;
 }
 
-const initialState = { sort: 'popular', filterType: 'all', filterColor: ['any'], filterCategory: ['general'] };
+const initialState = { sort: 'popular', filterType: undefined, filterColor: [], filterSeason: [] };
 
 function reducer(state: any, action: FilterAction) {
 	switch (action.type) {
@@ -35,10 +33,23 @@ function reducer(state: any, action: FilterAction) {
 				...state,
 				filterColor: action.payload,
 			};
-		case 'filterCategory':
+		case 'filterSeason':
 			return {
 				...state,
-				filterCategory: action.payload,
+				filterSeason: action.payload,
+			};
+		case 'products':
+			return {
+				...state,
+				products: action.payload,
+			};
+		case 'resetFilters':
+			return {
+				...state,
+				sort: initialState.sort,
+				filterType: undefined,
+				filterColor: initialState.filterColor,
+				filterSeason: initialState.filterSeason,
 			};
 
 		default:
@@ -50,12 +61,11 @@ const ProductsFilter = () => {
 	const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 	const [state, dispatch] = useReducer(reducer, initialState);
 
-	console.log(state);
-	console.log(state.sort);
-	console.log(state.filterType);
-	console.log(state.filterColor);
-	console.log(state.filterCategory);
-	console.log('-------');
+	const data = useStaticQuery(query);
+	useEffect(() => {
+		const products = data.allContentfulProductGrid.nodes;
+		dispatch({ type: 'products', payload: products });
+	}, []);
 
 	return (
 		<div className="bg-primary">
@@ -150,49 +160,13 @@ const ProductsFilter = () => {
 																			defaultChecked={option.checked}
 																			className="h-4 w-4 rounded border-gray-300 text-primary accent-primary focus:ring-primary "
 																			onInput={() => {
-																				// Color Filters
-																				if (section.id === 'color') {
-																					const colorState: string[] = [];
-																					if (option.checked === false) {
-																						option.checked = true;
-																						section.options.forEach(item => {
-																							if (item.checked === true) colorState.push(item.value);
-																						});
-
-																						dispatch({ type: 'filterColor', payload: colorState });
-																						return;
-																					}
-																					if (option.checked === true) {
-																						option.checked = false;
-																						section.options.forEach(item => {
-																							if (item.checked === true) colorState.push(item.value);
-																						});
-																						dispatch({ type: 'filterColor', payload: colorState });
-																						return;
-																					}
-																				}
-
-																				// Category Filters
-																				if (section.id === 'category') {
-																					const categoryState: string[] = [];
-																					if (option.checked === false) {
-																						option.checked = true;
-																						section.options.forEach(item => {
-																							if (item.checked === true) categoryState.push(item.value);
-																						});
-																						dispatch({ type: 'filterCategory', payload: categoryState });
-																						return;
-																					}
-																					if (option.checked === true) {
-																						option.checked = false;
-																						section.options.forEach(item => {
-																							if (item.checked === true) categoryState.push(item.value);
-																						});
-																						dispatch({ type: 'filterCategory', payload: categoryState });
-																						return;
-																					}
-																				}
+																				option.checked = !option.checked;
+																				dispatch({
+																					type: section.id === 'color' ? 'filterColor' : 'filterSeason',
+																					payload: section.options.filter(x => x.checked).map(x => x.value),
+																				});
 																			}}
+																			readOnly
 																		/>
 																		<label
 																			htmlFor={`filter-mobile-${section.id}-${optionIdx}`}
@@ -208,6 +182,21 @@ const ProductsFilter = () => {
 												)}
 											</Disclosure>
 										))}
+										<div className="pl-2 pt-2">
+											<button
+												type="button"
+												className="inline-flex items-center rounded-md border border-primary bg-secondary px-4 py-2 text-base font-medium text-primary shadow-sm hover:bg-gray-600"
+												onClick={() => {
+													productTypes.forEach(item => (item.current = false));
+													productTypes[0].current = true;
+													filters[0].options.forEach(item => (item.checked = false));
+													filters[1].options.forEach(item => (item.checked = false));
+													dispatch({ type: 'resetFilters', payload: undefined });
+												}}
+											>
+												Reset Filters
+											</button>
+										</div>
 									</form>
 								</Dialog.Panel>
 							</Transition.Child>
@@ -317,9 +306,7 @@ const ProductsFilter = () => {
 										</li>
 									))}
 								</ul>
-
 								{/* Drop Down Filters Title and Button */}
-
 								{filters.map(section => (
 									<Disclosure as="div" key={section.id} className="border-b border-gray-200 py-6">
 										{({ open }) => (
@@ -348,52 +335,16 @@ const ProductsFilter = () => {
 																	name={`${section.id}[]`}
 																	defaultValue={option.value}
 																	type="checkbox"
-																	defaultChecked={option.checked}
+																	checked={option.checked}
 																	className="h-4 w-4 rounded border-gray-300 accent-secondary focus:ring-secondary"
 																	onInput={() => {
-																		// Color Filters
-																		if (section.id === 'color') {
-																			const colorState: string[] = [];
-																			if (option.checked === false) {
-																				option.checked = true;
-																				section.options.forEach(item => {
-																					if (item.checked === true) colorState.push(item.value);
-																				});
-
-																				dispatch({ type: 'filterColor', payload: colorState });
-																				return;
-																			}
-																			if (option.checked === true) {
-																				option.checked = false;
-																				section.options.forEach(item => {
-																					if (item.checked === true) colorState.push(item.value);
-																				});
-																				dispatch({ type: 'filterColor', payload: colorState });
-																				return;
-																			}
-																		}
-
-																		// Category Filters
-																		if (section.id === 'category') {
-																			const categoryState: string[] = [];
-																			if (option.checked === false) {
-																				option.checked = true;
-																				section.options.forEach(item => {
-																					if (item.checked === true) categoryState.push(item.value);
-																				});
-																				dispatch({ type: 'filterCategory', payload: categoryState });
-																				return;
-																			}
-																			if (option.checked === true) {
-																				option.checked = false;
-																				section.options.forEach(item => {
-																					if (item.checked === true) categoryState.push(item.value);
-																				});
-																				dispatch({ type: 'filterCategory', payload: categoryState });
-																				return;
-																			}
-																		}
+																		option.checked = !option.checked;
+																		dispatch({
+																			type: section.id === 'color' ? 'filterColor' : 'filterSeason',
+																			payload: section.options.filter(x => x.checked).map(x => x.value),
+																		});
 																	}}
+																	readOnly
 																/>
 																<label
 																	htmlFor={`filter-${section.id}-${optionIdx}`}
@@ -409,11 +360,37 @@ const ProductsFilter = () => {
 										)}
 									</Disclosure>
 								))}
+								<div className="pt-3">
+									<button
+										type="button"
+										className="inline-flex items-center rounded-md border border-gray-300 bg-secondary px-4 py-2 text-base font-medium text-primary shadow-sm hover:bg-gray-600"
+										onClick={() => {
+											productTypes.forEach(item => (item.current = false));
+											productTypes[0].current = true;
+											filters[0].options.forEach(item => (item.checked = false));
+											filters[1].options.forEach(item => (item.checked = false));
+											dispatch({ type: 'resetFilters', payload: undefined });
+										}}
+									>
+										Reset Filters
+									</button>
+								</div>
 							</form>
 
 							{/* Product Gird Output */}
 							<div className="lg:col-span-3">
-								<ProductsGrid />
+								{state.products ? (
+									<ProductsGrid
+										products={state.products.filter(
+											(product: { type: string; color: []; category: [] }) =>
+												(state.filterType === undefined || product.type === state.filterType) &&
+												(state.filterColor.length === 0 || state.filterColor.includes(product.color)) &&
+												(state.filterSeason.length === 0 || state.filterSeason.includes(product.category)),
+										)}
+									/>
+								) : (
+									<div />
+								)}
 							</div>
 						</div>
 					</section>
@@ -424,3 +401,20 @@ const ProductsFilter = () => {
 };
 
 export default ProductsFilter;
+
+const query = graphql`
+	{
+		allContentfulProductGrid(sort: { fields: createdAt, order: ASC }) {
+			nodes {
+				title
+				type
+				color
+				category
+				contentful_id
+				image {
+					gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)
+				}
+			}
+		}
+	}
+`;

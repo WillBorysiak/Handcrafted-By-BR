@@ -33,16 +33,16 @@ const HomeFeatures = () => {
 
 	return (
 		<section className="overflow-hidden bg-orange-200">
-			<div className=" mx-auto max-w-7xl py-12 px-4 font-roman first-letter:relative sm:px-6 lg:px-8">
+			<div className=" mx-auto max-w-7xl py-5 px-4 font-roman first-letter:relative sm:px-6 lg:px-8">
 				<div className="relative lg:grid lg:grid-cols-3 lg:gap-x-8">
 					<div className="lg:col-span-1">
-						<SubTitle title="What makes my products great!" />
+						<SubTitle title="What makes my products so great!" />
 					</div>
-					<dl className="mt-10 space-y-10 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 sm:space-y-0 lg:col-span-2 lg:mt-0">
+					<dl className="mt-5 space-y-5 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 sm:space-y-0 lg:col-span-2 lg:mt-0">
 						{features.map((feature: FeatureTypes) => (
 							<article key={feature.contentful_id}>
 								<dt>
-									<div className="flex h-12 w-12 items-center justify-center rounded-md bg-secondary text-white">
+									<div className="mb-3 flex h-12 w-12 items-center justify-center rounded-md bg-secondary text-white">
 										{feature.penIcon && penIcon}
 										{feature.scissorsIcon && scissorsIcon}
 										{feature.spaceIcon && spaceIcon}
