@@ -11,7 +11,7 @@ const HomePage = () => {
 	return (
 		<>
 			<Layout>
-				<SEO title="Home" />
+				<SEO title="Home" description="Just lovely handcrafted products made in Derbyshire, England" />
 				<Title title="Handcrafted by BarbaraRuth" />
 				<HomeHero />
 				<HomeStory />

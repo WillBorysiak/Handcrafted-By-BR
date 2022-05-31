@@ -9,11 +9,12 @@ import favicon_apple_180 from '../assets/images/favicons/apple-touch-icon.png';
 
 interface SEOPropTypes {
 	title: string;
+	description: string;
 }
 
 const SEO = (props: SEOPropTypes) => {
 	const metaTitle = 'Handcrafted by BR';
-	const metaDescription = 'Buy lovely handcrafted products made in Derbyshire, England';
+
 	return (
 		<Helmet
 			htmlAttributes={{ lang: 'en' }}
@@ -21,7 +22,7 @@ const SEO = (props: SEOPropTypes) => {
 			meta={[
 				{
 					name: `description`,
-					content: metaDescription,
+					content: props.description,
 				},
 			]}
 			link={[

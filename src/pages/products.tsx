@@ -8,7 +8,7 @@ import ProductsFilter from '../components/products-page/ProductsFilter';
 const ProductsPage = () => {
 	return (
 		<Layout>
-			<SEO title="Products" />
+			<SEO title="Products" description="A gallery of all my products, current and old!" />
 			<Title title="The Gallery" />
 			<ProductsFilter />
 		</Layout>

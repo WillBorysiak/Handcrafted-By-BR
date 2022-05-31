@@ -65,8 +65,17 @@ const ProductsFilter = () => {
 	useEffect(() => {
 		const products = data.allContentfulProductGrid.nodes;
 		dispatch({ type: 'products', payload: products });
+		// Reset Filters on page load
+		sortOptions.forEach(item => (item.current = false));
+		sortOptions[0].current = true;
+		productTypes.forEach(item => (item.current = false));
+		productTypes[0].current = true;
+		filters[0].options.forEach(item => (item.checked = false));
+		filters[1].options.forEach(item => (item.checked = false));
+		dispatch({ type: 'resetFilters', payload: undefined });
 	}, []);
 
+	console.log(state);
 	return (
 		<div className="bg-primary">
 			<div>
@@ -187,6 +196,8 @@ const ProductsFilter = () => {
 												type="button"
 												className="inline-flex items-center rounded-md border border-primary bg-secondary px-4 py-2 text-base font-medium text-primary shadow-sm hover:bg-gray-600"
 												onClick={() => {
+													sortOptions.forEach(item => (item.current = false));
+													sortOptions[0].current = true;
 													productTypes.forEach(item => (item.current = false));
 													productTypes[0].current = true;
 													filters[0].options.forEach(item => (item.checked = false));
@@ -365,6 +376,8 @@ const ProductsFilter = () => {
 										type="button"
 										className="inline-flex items-center rounded-md border border-gray-300 bg-secondary px-4 py-2 text-base font-medium text-primary shadow-sm hover:bg-gray-600"
 										onClick={() => {
+											sortOptions.forEach(item => (item.current = false));
+											sortOptions[0].current = true;
 											productTypes.forEach(item => (item.current = false));
 											productTypes[0].current = true;
 											filters[0].options.forEach(item => (item.checked = false));
@@ -381,12 +394,18 @@ const ProductsFilter = () => {
 							<div className="lg:col-span-3">
 								{state.products ? (
 									<ProductsGrid
-										products={state.products.filter(
-											(product: { type: string; color: []; category: [] }) =>
-												(state.filterType === undefined || product.type === state.filterType) &&
-												(state.filterColor.length === 0 || state.filterColor.includes(product.color)) &&
-												(state.filterSeason.length === 0 || state.filterSeason.includes(product.category)),
-										)}
+										products={state.products
+											.filter(
+												(product: { type: string; color: []; category: [] }) =>
+													(state.filterType === undefined || product.type === state.filterType) &&
+													(state.filterColor.length === 0 || state.filterColor.includes(product.color)) &&
+													(state.filterSeason.length === 0 || state.filterSeason.includes(product.category)),
+											)
+											.sort((a: { title: string }, b: { title: string }) => {
+												if (state.sort === 'popular') return 0;
+												if (state.sort === 'a_z' && b.title > a.title) return -1;
+												if (state.sort === 'z_a' && a.title > b.title) return -1;
+											})}
 									/>
 								) : (
 									<div />
