@@ -11,7 +11,7 @@ const Title = (props: TitlePropTypes) => {
 				<div className="text-center">
 					<h1
 						id="title"
-						className="font-roman text-5xl font-extrabold tracking-wider text-gray-900 sm:text-6xl md:text-6xl"
+						className=" font-roman text-5xl font-extrabold capitalize tracking-wider text-gray-900 sm:text-6xl md:text-6xl"
 					>
 						{props.title}
 					</h1>

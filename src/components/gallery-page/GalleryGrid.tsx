@@ -14,7 +14,7 @@ interface ProductTypes {
 	contentful_id: string;
 }
 
-const ProductGrid = (props: any) => {
+const GalleryGrid = (props: any) => {
 	return (
 		<div className="bg-primary pb-5">
 			<div className="mx-auto max-w-7xl overflow-hidden sm:px-6 lg:px-8">
@@ -33,7 +33,7 @@ const ProductGrid = (props: any) => {
 								<div className="text-left">
 									<h4
 										id="paragraph-title"
-										className="text-md mt-1 font-semibold text-gray-900 transition duration-1000 ease-in-out sm:group-hover:text-xl md:text-lg"
+										className="text-md mt-1 font-semibold text-gray-900 transition duration-1000 ease-in-out  md:text-lg"
 									>
 										{product.title}
 									</h4>
@@ -57,4 +57,4 @@ const ProductGrid = (props: any) => {
 	);
 };
 
-export default ProductGrid;
+export default GalleryGrid;

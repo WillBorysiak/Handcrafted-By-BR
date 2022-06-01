@@ -9,7 +9,7 @@ const ProcessPage = () => {
 	return (
 		<Layout>
 			<SEO title="Process" description="How I make my products, from start to finish!" />
-			<Title title="The Process" />
+			<Title title="Design Process" />
 			<ProcessGrid />
 		</Layout>
 	);

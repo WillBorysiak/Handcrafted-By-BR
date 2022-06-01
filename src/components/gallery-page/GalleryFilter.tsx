@@ -5,7 +5,7 @@ import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';
 import { ChevronDownIcon, FilterIcon, MinusSmIcon, PlusSmIcon, ViewGridIcon } from '@heroicons/react/solid';
 
-import ProductsGrid from './ProductsGrid';
+import GalleryGrid from './GalleryGrid';
 import { productTypes, sortOptions, filters } from '../../data/product-nav-data';
 import { classNames } from '../utils/classes';
 
@@ -57,7 +57,7 @@ function reducer(state: any, action: FilterAction) {
 	}
 }
 
-const ProductsFilter = () => {
+const GalleryFilter = () => {
 	const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 	const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -75,7 +75,6 @@ const ProductsFilter = () => {
 		dispatch({ type: 'resetFilters', payload: undefined });
 	}, []);
 
-	console.log(state);
 	return (
 		<div className="bg-primary">
 			<div>
@@ -393,7 +392,7 @@ const ProductsFilter = () => {
 							{/* Product Gird Output */}
 							<div className="lg:col-span-3">
 								{state.products ? (
-									<ProductsGrid
+									<GalleryGrid
 										products={state.products
 											.filter(
 												(product: { type: string; color: []; category: [] }) =>
@@ -419,7 +418,7 @@ const ProductsFilter = () => {
 	);
 };
 
-export default ProductsFilter;
+export default GalleryFilter;
 
 const query = graphql`
 	{
