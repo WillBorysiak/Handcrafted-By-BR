@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
 import Heading from '../typography/Heading';
@@ -7,6 +7,7 @@ import { faRulerHorizontal } from '@fortawesome/pro-thin-svg-icons';
 import { faPenRuler } from '@fortawesome/pro-thin-svg-icons';
 import { faRulerTriangle } from '@fortawesome/pro-thin-svg-icons';
 import SubTitle from '../typography/SubTitle';
+import GalleryModal from '../gallery-page/GalleryModal';
 
 interface ProductTypes {
 	title: string;
@@ -15,15 +16,25 @@ interface ProductTypes {
 }
 
 const GalleryGrid = (props: any) => {
+	const [open, setOpen] = useState(false);
+	const [modalImage, setModalImage] = useState({});
+
 	return (
 		<div className="bg-primary pb-5">
+			<GalleryModal open={open} setOpen={setOpen} image={modalImage} />
 			<div className="mx-auto max-w-7xl overflow-hidden sm:px-6 lg:px-8">
 				<h2 className="sr-only">Products</h2>
 				<div className="-mx-px grid grid-cols-2  sm:mx-0 md:grid-cols-3 lg:grid-cols-4">
 					{props.products.length > 0 ? (
 						props.products.map((product: ProductTypes) => (
 							<div key={product.contentful_id} className="group relative  p-1  sm:p-1">
-								<div className="aspect-w-1 aspect-h-1 overflow-hidden rounded-sm ">
+								<div
+									className="aspect-w-1 aspect-h-1 overflow-hidden rounded-sm "
+									onClick={() => {
+										setOpen(true);
+										setModalImage(product.image.gatsbyImageData);
+									}}
+								>
 									<GatsbyImage
 										image={product.image.gatsbyImageData}
 										alt={product.title}
