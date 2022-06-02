@@ -1,17 +1,18 @@
 import React from 'react';
 
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../../layout/Layout';
 import SEO from '../../layout/SEO';
 import StoreProduct from '../../components/store-page/StoreProduct';
 
 const StoreProductPage = (props: any) => {
 	const productData = props.data.contentfulStoreProducts;
-	console.log(props);
+	const currentPage = props.pageContext.title;
+
 	return (
 		<Layout>
 			<SEO title="Forest Drawstring" description="View my commercial product and purchase it from Etsy!" />
-			<StoreProduct productData={productData} />
+			<StoreProduct productData={productData} currentPage={currentPage} />
 		</Layout>
 	);
 };
@@ -29,6 +30,7 @@ export const query = graphql`
 			usage
 			notes
 			notes2
+			etsyUrl
 			mainImage {
 				gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)
 			}
