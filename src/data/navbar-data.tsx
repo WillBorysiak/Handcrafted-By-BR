@@ -13,7 +13,7 @@ const contactIcon = <FontAwesomeIcon icon={faStore} size="3x" />;
 
 export const navigation = [
 	{ name: 'Home', pageLink: '/', current: true, icon: houseIcon },
-	{ name: 'Design Process', pageLink: '/process', current: false, icon: addressIcon },
-	{ name: 'Product Gallery', pageLink: '/products', current: false, icon: scissorsIcon },
+	{ name: 'Process', pageLink: '/process', current: false, icon: addressIcon },
+	{ name: 'Gallery', pageLink: '/products', current: false, icon: scissorsIcon },
 	{ name: 'Store', pageLink: '/store', current: false, icon: contactIcon },
 ];

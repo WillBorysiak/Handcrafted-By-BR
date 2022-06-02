@@ -1,5 +1,9 @@
 import React from 'react';
 
+interface StoreProductPropTypes {
+	productData: {};
+}
+
 const features = [
 	{
 		name: 'Sleek design',
@@ -15,17 +19,27 @@ const features = [
 	{ name: 'Long spout', description: "Designed specifically for controlled pour-overs that don't slash or sputter." },
 ];
 
-const StoreProduct = () => {
+const StoreProduct = (props: StoreProductPropTypes) => {
+	const productInfo = props.productData;
+	console.log(productInfo);
 	return (
 		<div className="bg-primary">
 			<div className="mx-auto max-w-2xl py-10 px-4 sm:py-5 sm:px-6 lg:max-w-7xl lg:px-8">
 				<div className="grid grid-cols-1 items-center gap-y-5 gap-x-8 lg:grid-cols-2">
 					<div>
 						<div className="border-b border-gray-200 pb-10">
-							<h2 className="font-medium text-gray-500">Machined Kettle</h2>
-							<p className="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-								Elegant simplicity
-							</p>
+							<h3
+								id="heading"
+								className="mx-auto mt-3 max-w-md font-roman text-xl capitalize  text-gray-900 sm:text-2xl md:mt-2 md:max-w-3xl md:text-2xl"
+							>
+								{productInfo.type}
+							</h3>
+							<h2
+								id="sub-title"
+								className=" mt-3 font-roman text-2xl font-extrabold tracking-wider text-gray-900 sm:text-3xl "
+							>
+								{productInfo.title}
+							</h2>
 						</div>
 
 						<dl className="mt-10 space-y-10">
