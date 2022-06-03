@@ -1,4 +1,5 @@
 import React from 'react';
+
 import incentives from '../../data/store-incentives';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';

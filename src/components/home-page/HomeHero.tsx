@@ -1,9 +1,13 @@
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import { StaticImage, GatsbyImage } from 'gatsby-plugin-image';
+import { graphql, useStaticQuery } from 'gatsby';
 
 import SubTitle from '../typography/SubTitle';
 
 const HomeHero = () => {
+	const data = useStaticQuery(query);
+	const images = data.allContentfulHomeHeroImages.nodes[0].heroImages;
+
 	return (
 		<section className="relative overflow-hidden bg-primary dark:bg-secondary">
 			<div className=" pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
@@ -38,39 +42,16 @@ const HomeHero = () => {
 							<div className="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
 								<div className="flex items-center space-x-6 lg:space-x-8">
 									<div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-										<div className="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
-											<StaticImage
-												src="../../assets/images/HomeHero/belper.jpg"
+										<div className="h-64 w-44 overflow-hidden rounded-sm sm:opacity-0 lg:opacity-100">
+											<GatsbyImage
+												image={images[0].gatsbyImageData}
 												alt=""
 												className="h-full w-full object-cover object-center"
 											/>
 										</div>
-										<div className="h-64 w-44 overflow-hidden rounded-lg">
-											<StaticImage
-												src="../../assets/images/HomeHero/pattern.jpg"
-												alt=""
-												className="h-full w-full object-cover object-center"
-											/>
-										</div>
-									</div>
-									<div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-										<div className="h-64 w-44 overflow-hidden rounded-lg">
-											<StaticImage
-												src="../../assets/images/HomeHero/red.jpg"
-												alt=""
-												className="h-full w-full object-cover object-center"
-											/>
-										</div>
-										<div className="h-64 w-44 overflow-hidden rounded-lg">
-											<StaticImage
-												src="../../assets/images/HomeHero/rabbit.jpg"
-												alt=""
-												className="h-full w-full object-cover object-center"
-											/>
-										</div>
-										<div className="h-64 w-44 overflow-hidden rounded-lg">
-											<StaticImage
-												src="../../assets/images/HomeHero/rocket.jpg"
+										<div className="h-64 w-44 overflow-hidden rounded-sm">
+											<GatsbyImage
+												image={images[1].gatsbyImageData}
 												alt=""
 												className="h-full w-full object-cover object-center"
 											/>
@@ -78,15 +59,38 @@ const HomeHero = () => {
 									</div>
 									<div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
 										<div className="h-64 w-44 overflow-hidden rounded-lg">
-											<StaticImage
-												src="../../assets/images/HomeHero/robot.jpg"
+											<GatsbyImage
+												image={images[2].gatsbyImageData}
 												alt=""
 												className="h-full w-full object-cover object-center"
 											/>
 										</div>
 										<div className="h-64 w-44 overflow-hidden rounded-lg">
-											<StaticImage
-												src="../../assets/images/HomeHero/flower.jpg"
+											<GatsbyImage
+												image={images[3].gatsbyImageData}
+												alt=""
+												className="h-full w-full object-cover object-center"
+											/>
+										</div>
+										<div className="h-64 w-44 overflow-hidden rounded-lg">
+											<GatsbyImage
+												image={images[4].gatsbyImageData}
+												alt=""
+												className="h-full w-full object-cover object-center"
+											/>
+										</div>
+									</div>
+									<div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+										<div className="h-64 w-44 overflow-hidden rounded-lg">
+											<GatsbyImage
+												image={images[5].gatsbyImageData}
+												alt=""
+												className="h-full w-full object-cover object-center"
+											/>
+										</div>
+										<div className="h-64 w-44 overflow-hidden rounded-lg">
+											<GatsbyImage
+												image={images[6].gatsbyImageData}
 												alt=""
 												className="h-full w-full object-cover object-center"
 											/>
@@ -103,3 +107,16 @@ const HomeHero = () => {
 };
 
 export default HomeHero;
+
+const query = graphql`
+	{
+		allContentfulHomeHeroImages {
+			nodes {
+				heroImages {
+					filename
+					gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)
+				}
+			}
+		}
+	}
+`;

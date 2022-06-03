@@ -1,7 +1,7 @@
 import React from 'react';
-
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+
 import SubTitle from '../typography/SubTitle';
 
 interface ProductTypes {
@@ -29,7 +29,7 @@ const StoreGallery = () => {
 								<GatsbyImage
 									image={product.productImage.gatsbyImageData}
 									alt={product.title}
-									className="h-full w-full object-cover object-center "
+									className="h-full w-full object-cover object-center transition duration-200 ease-in-out sm:hover:scale-110"
 								/>
 							</div>
 							<div className="mt-3">

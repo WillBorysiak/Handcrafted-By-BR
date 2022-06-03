@@ -1,7 +1,7 @@
 import React from 'react';
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { Dialog, Transition } from '@headlessui/react';
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
 
 const GalleryModal = (props: any) => {
 	return (

@@ -1,15 +1,12 @@
 import React from 'react';
-import { Fragment } from 'react';
 import { Link } from 'gatsby';
-import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
+
+import { Disclosure } from '@headlessui/react';
+import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { navigation } from '../data/navbar-data';
+import { classNames } from '../components/utils/classes';
 
-function classNames(...classes: any) {
-	return classes.filter(Boolean).join(' ');
-}
-
-export default function Example() {
+const Navbar = () => {
 	return (
 		<Disclosure as="nav" className="bg-secondary sm:pb-2">
 			{({ open }) => (
@@ -72,4 +69,6 @@ export default function Example() {
 			)}
 		</Disclosure>
 	);
-}
+};
+
+export default Navbar;

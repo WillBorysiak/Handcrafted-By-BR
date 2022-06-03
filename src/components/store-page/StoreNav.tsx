@@ -1,7 +1,7 @@
 import React from 'react';
-import { ChevronRightIcon, HomeIcon } from '@heroicons/react/solid';
-
 import { Link } from 'gatsby';
+
+import { ChevronRightIcon, HomeIcon } from '@heroicons/react/solid';
 
 interface StoreNavProps {
 	currentPage: string;

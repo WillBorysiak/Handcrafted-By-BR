@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Fragment, useState, useReducer } from 'react';
+
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';
 import { ChevronDownIcon, FilterIcon, MinusSmIcon, PlusSmIcon, ViewGridIcon } from '@heroicons/react/solid';

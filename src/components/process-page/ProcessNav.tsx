@@ -1,9 +1,10 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 
 import { Listbox, Transition } from '@headlessui/react';
-import { CheckIcon, SelectorIcon } from '@heroicons/react/solid';
+import { SelectorIcon } from '@heroicons/react/solid';
 import processArray from '../../data/process-nav-data';
 import Heading from '../typography/Heading';
+import { classNames } from '../utils/classes';
 
 interface ProcessNavPropTypes {
 	selected: {
@@ -12,10 +13,6 @@ interface ProcessNavPropTypes {
 		contentful_id: string;
 	};
 	setSelected: any;
-}
-
-function classNames(...classes: any) {
-	return classes.filter(Boolean).join(' ');
 }
 
 const ProcessNav = (props: ProcessNavPropTypes) => {
@@ -51,7 +48,7 @@ const ProcessNav = (props: ProcessNavPropTypes) => {
 										}
 										value={process}
 									>
-										{({ selected, active }) => (
+										{({ selected }) => (
 											<>
 												<span className={classNames(selected ? 'font-semibold' : 'font-normal', 'block truncate')}>
 													{process.name}

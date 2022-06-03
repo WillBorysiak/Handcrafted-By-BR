@@ -11,11 +11,6 @@ import { faScissors } from '@fortawesome/pro-thin-svg-icons';
 import { faRecycle } from '@fortawesome/pro-thin-svg-icons';
 import Paragraph from '../typography/Paragraph';
 
-const penIcon = <FontAwesomeIcon icon={faPenRuler} size="2x" />;
-const scissorsIcon = <FontAwesomeIcon icon={faScissors} size="2x" />;
-const spaceIcon = <FontAwesomeIcon icon={faPlanetRinged} size="2x" />;
-const recycleIcon = <FontAwesomeIcon icon={faRecycle} size="2x" />;
-
 interface FeatureTypes {
 	title: string;
 	body: string;
@@ -26,6 +21,11 @@ interface FeatureTypes {
 	scissorsIcon: boolean;
 	recycleIcon: boolean;
 }
+
+const penIcon = <FontAwesomeIcon icon={faPenRuler} size="2x" />;
+const scissorsIcon = <FontAwesomeIcon icon={faScissors} size="2x" />;
+const spaceIcon = <FontAwesomeIcon icon={faPlanetRinged} size="2x" />;
+const recycleIcon = <FontAwesomeIcon icon={faRecycle} size="2x" />;
 
 const HomeFeatures = () => {
 	const data = useStaticQuery(query);

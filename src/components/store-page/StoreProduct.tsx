@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
 import StoreNav from './StoreNav';
@@ -28,7 +27,6 @@ interface StoreProductPropTypes {
 
 const StoreProduct = (props: StoreProductPropTypes) => {
 	const product = props.productData;
-	console.log(props);
 
 	return (
 		<div className="bg-primary">

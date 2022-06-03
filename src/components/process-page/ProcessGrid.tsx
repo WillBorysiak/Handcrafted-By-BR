@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
@@ -7,6 +7,7 @@ import SubTitle from '../typography/SubTitle';
 import ProcessNav from './ProcessNav';
 import processArray from '../../data/process-nav-data';
 import useDidMountEffect from '../hooks/useDidMountEffect';
+import { classNames } from '../utils/classes';
 
 interface ProcessTypes {
 	title: string;
@@ -19,10 +20,6 @@ interface ProcessTypes {
 		gatsbyImageData: IGatsbyImageData;
 	};
 	imageAlt: string;
-}
-
-function classNames(...classes: any) {
-	return classes.filter(Boolean).join(' ');
 }
 
 const ProcessGrid = () => {

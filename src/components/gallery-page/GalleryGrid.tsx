@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
-import Heading from '../typography/Heading';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRulerHorizontal } from '@fortawesome/pro-thin-svg-icons';
 import { faPenRuler } from '@fortawesome/pro-thin-svg-icons';
 import { faRulerTriangle } from '@fortawesome/pro-thin-svg-icons';
+import Heading from '../typography/Heading';
 import SubTitle from '../typography/SubTitle';
 import GalleryModal from '../gallery-page/GalleryModal';
 
@@ -38,7 +38,7 @@ const GalleryGrid = (props: any) => {
 									<GatsbyImage
 										image={product.image.gatsbyImageData}
 										alt={product.title}
-										className="h-full w-full object-cover object-center  transition duration-200 ease-in-out hover:scale-110   sm:group-hover:scale-125"
+										className="h-full w-full object-cover object-center transition duration-200 ease-in-out hover:scale-110  sm:group-hover:scale-125"
 									/>
 								</div>
 								<div className="text-left">
