@@ -26,7 +26,7 @@ const ErrorHero = () => {
 			<div className="hidden lg:absolute lg:inset-y-0 lg:right-0 lg:block lg:w-1/2">
 				<StaticImage
 					className="absolute inset-0 h-full w-full object-cover"
-					src="../../assets/images/HomeHero/water.jpg"
+					src="../../assets/images/water.jpg"
 					alt="Chatsworth Hall, Derbyshire"
 				/>
 			</div>
