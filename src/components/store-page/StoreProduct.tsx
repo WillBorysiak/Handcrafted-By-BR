@@ -68,7 +68,7 @@ const StoreProduct = (props: StoreProductPropTypes) => {
 					</div>
 
 					<div>
-						<div className="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-100">
+						<div className="overflow-hidden rounded-lg ">
 							<GatsbyImage
 								image={product.mainImage.gatsbyImageData}
 								alt={product.title}
@@ -76,14 +76,14 @@ const StoreProduct = (props: StoreProductPropTypes) => {
 							/>
 						</div>
 						<div className="mt-4 grid grid-cols-2 gap-4 sm:mt-6 sm:gap-6 lg:mt-8 lg:gap-8">
-							<div className="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-100">
+							<div className="overflow-hidden rounded-lg">
 								<GatsbyImage
 									image={product.secondaryImageOne.gatsbyImageData}
 									alt={product.title}
 									className="h-full w-full object-cover object-center"
 								/>
 							</div>
-							<div className="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-100">
+							<div className="overflow-hidden rounded-lg">
 								<GatsbyImage
 									image={product.secondaryImageTwo.gatsbyImageData}
 									alt={product.title}

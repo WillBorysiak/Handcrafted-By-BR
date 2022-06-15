@@ -29,7 +29,7 @@ const GalleryGrid = (props: any) => {
 						props.products.map((product: ProductTypes) => (
 							<div key={product.contentful_id} className="group relative  p-1  sm:p-1">
 								<div
-									className="aspect-w-1 aspect-h-1 overflow-hidden rounded-sm "
+									className="overflow-hidden rounded-sm"
 									onClick={() => {
 										setOpen(true);
 										setModalImage(product.image.gatsbyImageData);

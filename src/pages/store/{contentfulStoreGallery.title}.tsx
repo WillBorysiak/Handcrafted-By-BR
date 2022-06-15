@@ -32,13 +32,13 @@ export const query = graphql`
 			notes2
 			etsyUrl
 			mainImage {
-				gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)
+				gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG, aspectRatio: 1, resizingBehavior: NO_CHANGE)
 			}
 			secondaryImageOne {
-				gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)
+				gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG, aspectRatio: 1, resizingBehavior: NO_CHANGE)
 			}
 			secondaryImageTwo {
-				gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)
+				gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG, aspectRatio: 1, resizingBehavior: NO_CHANGE)
 			}
 		}
 	}

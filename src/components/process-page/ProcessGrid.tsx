@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
-import Paragraph from '../typography/Paragraph';
 import SubTitle from '../typography/SubTitle';
 import ProcessNav from './ProcessNav';
 import processArray from '../../data/process-nav-data';
@@ -54,8 +53,15 @@ const ProcessGrid = () => {
 									'mt-6  lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4',
 								)}
 							>
-								<SubTitle title={process.title} />
-								<Paragraph text={process.body.body} />
+								<h2
+									id="sub-title"
+									className=" font-roman text-2xl font-extrabold tracking-wider text-gray-900 sm:text-3xl "
+								>
+									{process.title}
+								</h2>
+								<p id="paragraph" className="mt-3 text-base text-gray-500 md:text-xl">
+									{process.body.body}
+								</p>
 							</div>
 							<div
 								className={classNames(
@@ -63,7 +69,7 @@ const ProcessGrid = () => {
 									'flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8',
 								)}
 							>
-								<div className="aspect-w-4 aspect-h-2 overflow-hidden rounded-sm bg-gray-100 ">
+								<div className="overflow-hidden rounded-sm">
 									<GatsbyImage
 										image={process.image.gatsbyImageData}
 										alt={process.imageAlt}
@@ -92,7 +98,7 @@ const query = graphql`
 				}
 				contentful_id
 				image {
-					gatsbyImageData(placeholder: TRACED_SVG, layout: CONSTRAINED)
+					gatsbyImageData(placeholder: TRACED_SVG, layout: CONSTRAINED, aspectRatio: 1)
 				}
 				imageAlt
 			}
