@@ -32,8 +32,8 @@ const GalleryModal = (props: any) => {
 						>
 							<Dialog.Panel className="relative transform overflow-hidden rounded-sm  pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
 								<div>
-									<div className="mx-auto flex items-center justify-center rounded-full bg-green-100">
-										<GatsbyImage image={props.image} alt="Test" />
+									<div className="mx-auto flex items-center justify-center rounded-full">
+										<GatsbyImage image={props.image} alt="" />
 									</div>
 									<div className="">
 										<Dialog.Title as="h3" className="" />

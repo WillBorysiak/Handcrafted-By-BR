@@ -431,7 +431,13 @@ const query = graphql`
 				category
 				contentful_id
 				image {
-					gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG, resizingBehavior: NO_CHANGE, aspectRatio: 1)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						placeholder: TRACED_SVG
+						resizingBehavior: NO_CHANGE
+						aspectRatio: 1
+						quality: 50
+					)
 				}
 			}
 		}
