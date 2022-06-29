@@ -21,6 +21,14 @@
     <p align="center">Gatsby</p>
   </div>
 </div>
+
+<div align="center">
+  <div style="display: flex; flex-direction: row">
+    <img align="center" src="https://symbols.getvecta.com/stencil_97/3_tailwind-css-icon.5009c3dbea.svg" alt="HTML" height="50"/>
+    <p align="center">Tailwind CSS</p>
+  </div>
+</div>
+ 
    
 <div align="center">
   <div style="display: flex; flex-direction: row">
@@ -31,11 +39,10 @@
  
 <div align="center">
   <div style="display: flex; flex-direction: row">
-    <img align="center" src="https://symbols.getvecta.com/stencil_97/3_tailwind-css-icon.5009c3dbea.svg" alt="HTML" height="50"/>
-    <p align="center">Tailwind CSS</p>
+    <img align="center" src="https://seeklogo.com/images/C/contentful-logo-C395C545BF-seeklogo.com.png" alt="HTML" height="50"/>
+    <p align="center">Contentful</p>
   </div>
 </div>
- 
   
 <h2 style="color: grey" align="center">What I learnt:</h2>
  
