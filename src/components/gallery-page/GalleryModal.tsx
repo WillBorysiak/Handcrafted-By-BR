@@ -1,9 +1,10 @@
 import React from 'react';
 import { Fragment } from 'react';
+import { GalleryModalTypes } from '../../../models/gallery-page/modal.model';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { Dialog, Transition } from '@headlessui/react';
 
-const GalleryModal = (props: any) => {
+const GalleryModal = (props: GalleryModalTypes) => {
 	return (
 		<Transition.Root show={props.open} as={Fragment}>
 			<Dialog as="div" className="relative z-10" onClose={props.setOpen}>

@@ -1,19 +1,11 @@
 import React, { Fragment } from 'react';
+import { ProcessNavPropTypes } from '../../../models/process-page/nav.model';
 
 import { Listbox, Transition } from '@headlessui/react';
 import { SelectorIcon } from '@heroicons/react/solid';
 import processArray from '../../data/process-nav-data';
 import Heading from '../typography/Heading';
 import { classNames } from '../utils/classes';
-
-interface ProcessNavPropTypes {
-	selected: {
-		id: number;
-		name: string;
-		contentful_id: string;
-	};
-	setSelected: any;
-}
 
 const ProcessNav = (props: ProcessNavPropTypes) => {
 	return (

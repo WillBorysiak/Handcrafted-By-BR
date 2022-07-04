@@ -1,25 +1,13 @@
 import React, { useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { ProcessTypes } from '../../../models/process-page/grid.model';
 
 import SubTitle from '../typography/SubTitle';
 import ProcessNav from './ProcessNav';
 import processArray from '../../data/process-nav-data';
 import useDidMountEffect from '../hooks/useDidMountEffect';
 import { classNames } from '../utils/classes';
-
-interface ProcessTypes {
-	title: string;
-	body: {
-		body: string;
-	};
-	id: string;
-	contentful_id: string;
-	image: {
-		gatsbyImageData: IGatsbyImageData;
-	};
-	imageAlt: string;
-}
 
 const ProcessGrid = () => {
 	const [selected, setSelected] = useState(processArray[0]);
@@ -41,18 +29,13 @@ const ProcessGrid = () => {
 				</div>
 
 				<div className="mt-5 space-y-5 ">
-					{processes.map((process: ProcessTypes, processIdx: any) => (
+					{processes.map((process: ProcessTypes) => (
 						<div
 							id={`${process.contentful_id}`}
 							key={process.contentful_id}
-							className="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8"
+							className="flex flex-col-reverse lg:grid lg:grid-cols-4 lg:items-center lg:gap-x-8"
 						>
-							<div
-								className={classNames(
-									processIdx % 2 === 0 ? 'lg:col-start-1' : 'lg:col-start-8 xl:col-start-9',
-									'mt-6  lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4',
-								)}
-							>
+							<div className={classNames('mt-6  lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4')}>
 								<h2
 									id="sub-title"
 									className=" font-roman text-2xl font-extrabold tracking-wider text-gray-900 sm:text-3xl "
@@ -63,13 +46,8 @@ const ProcessGrid = () => {
 									{process.body.body}
 								</p>
 							</div>
-							<div
-								className={classNames(
-									processIdx % 2 === 0 ? 'lg:col-start-6 xl:col-start-5' : 'lg:col-start-1',
-									'flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8',
-								)}
-							>
-								<div className="overflow-hidden rounded-sm">
+							<div className={classNames('flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8')}>
+								<div className="flex w-full items-center justify-center overflow-hidden rounded-sm">
 									<GatsbyImage
 										image={process.image.gatsbyImageData}
 										alt={process.imageAlt}
@@ -98,7 +76,7 @@ const query = graphql`
 				}
 				contentful_id
 				image {
-					gatsbyImageData(placeholder: TRACED_SVG, layout: CONSTRAINED, aspectRatio: 1)
+					gatsbyImageData(placeholder: TRACED_SVG, layout: CONSTRAINED, aspectRatio: 1, height: 450, width: 450)
 				}
 				imageAlt
 			}

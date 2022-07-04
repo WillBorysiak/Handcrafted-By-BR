@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Fragment, useState, useReducer } from 'react';
+import { FilterAction } from '../../../models/gallery-page/filter.model';
 
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';
@@ -9,11 +10,6 @@ import { ChevronDownIcon, FilterIcon, MinusSmIcon, PlusSmIcon, ViewGridIcon } fr
 import GalleryGrid from './GalleryGrid';
 import { productTypes, sortOptions, filters } from '../../data/product-nav-data';
 import { classNames } from '../utils/classes';
-
-interface FilterAction {
-	type: string;
-	payload: string | string[] | undefined;
-}
 
 const initialState = { sort: 'popular', filterType: undefined, filterColor: [], filterSeason: [] };
 

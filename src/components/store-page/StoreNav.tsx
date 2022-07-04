@@ -1,11 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { StoreNavProps } from '../../../models/store-page/nav.model';
 
 import { ChevronRightIcon, HomeIcon } from '@heroicons/react/solid';
-
-interface StoreNavProps {
-	currentPage: string;
-}
 
 const StoreNav = (props: StoreNavProps) => {
 	return (

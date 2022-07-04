@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
+import { FeatureTypes } from '../../../models/home-page/feature.model';
 
 import SubTitle from '../typography/SubTitle';
 import ParagraphTitle from '../typography/ParagraphTitle';
@@ -10,17 +11,6 @@ import { faPlanetRinged } from '@fortawesome/pro-thin-svg-icons';
 import { faScissors } from '@fortawesome/pro-thin-svg-icons';
 import { faRecycle } from '@fortawesome/pro-thin-svg-icons';
 import Paragraph from '../typography/Paragraph';
-
-interface FeatureTypes {
-	title: string;
-	body: string;
-	icon: string;
-	contentful_id: string;
-	penIcon: boolean;
-	spaceIcon: boolean;
-	scissorsIcon: boolean;
-	recycleIcon: boolean;
-}
 
 const penIcon = <FontAwesomeIcon icon={faPenRuler} size="2x" />;
 const scissorsIcon = <FontAwesomeIcon icon={faScissors} size="2x" />;

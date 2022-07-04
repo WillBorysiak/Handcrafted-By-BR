@@ -13,17 +13,17 @@ const incentives = [
 	{
 		name: 'Choose from my stock',
 		icon: boxIcon,
-		description: 'I only have a limited number of products to hand, however my store is updated over time.',
+		description: 'I only have a limited number of products to hand, however my store is updated regularly.',
 	},
 	{
 		name: 'Purchase on Etsy',
 		icon: cardIcon,
-		description: 'If you see something you like, you can buy directly from Etsy on the product pages.',
+		description: 'If you see something you like, you can buy directly from Etsy on the listings page.',
 	},
 	{
 		name: 'Want a different design?',
 		icon: bagIcon,
-		description: 'Have an different design in mind? Message me via instagram or Etsy and lets see whats possible!',
+		description: 'Have an different design in mind? Message me via Instagram or Etsy and lets see whats possible!',
 	},
 ];
 

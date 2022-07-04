@@ -1,17 +1,9 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { ProductTypes } from '../../../models/store-page/gallery.model';
 
 import SubTitle from '../typography/SubTitle';
-
-interface ProductTypes {
-	title: string;
-	contentful_id: string;
-	url: string;
-	productImage: {
-		gatsbyImageData: IGatsbyImageData;
-	};
-}
 
 const StoreGallery = () => {
 	const data = useStaticQuery(query);

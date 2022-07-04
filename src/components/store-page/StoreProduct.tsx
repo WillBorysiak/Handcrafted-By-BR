@@ -1,29 +1,8 @@
 import React from 'react';
-import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { StoreProductPropTypes } from '../../../models/store-page/product.model';
 
 import StoreNav from './StoreNav';
-
-interface StoreProductPropTypes {
-	productData: {
-		title: string;
-		description: { description: string };
-		type: string;
-		usage: string;
-		notes: string;
-		notes2: string;
-		etsyUrl: string;
-		mainImage: {
-			gatsbyImageData: IGatsbyImageData;
-		};
-		secondaryImageOne: {
-			gatsbyImageData: IGatsbyImageData;
-		};
-		secondaryImageTwo: {
-			gatsbyImageData: IGatsbyImageData;
-		};
-	};
-	currentPage: string;
-}
 
 const StoreProduct = (props: StoreProductPropTypes) => {
 	const product = props.productData;

@@ -1,21 +1,11 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { StoryTypes } from '../../../models/home-page/story.model';
 
 import SubTitle from '../typography/SubTitle';
 import ParagraphTitle from '../typography/ParagraphTitle';
 import Paragraph from '../typography/Paragraph';
-
-interface StoryTypes {
-	title: string;
-	body: {
-		body: string;
-	};
-	contentful_id: string;
-	image: {
-		gatsbyImageData: IGatsbyImageData;
-	};
-}
 
 const HomeStory = () => {
 	const data = useStaticQuery(query);

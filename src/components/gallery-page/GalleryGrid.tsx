@@ -15,7 +15,7 @@ interface ProductTypes {
 	contentful_id: string;
 }
 
-const GalleryGrid = (props: any) => {
+const GalleryGrid = (props: { products: [] }) => {
 	const [open, setOpen] = useState(false);
 	const [modalImage, setModalImage] = useState({});
 
