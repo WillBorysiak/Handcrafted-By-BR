@@ -42,7 +42,10 @@ const ProcessGrid = () => {
 								>
 									{process.title}
 								</h2>
-								<p id="paragraph" className="mt-3 text-base text-gray-500 md:text-xl">
+								<p
+									id="paragraph"
+									className="mt-3 border-dashed border-white pb-5 text-base font-bold text-gray-500 sm:border-b md:text-xl"
+								>
 									{process.body.body}
 								</p>
 							</div>
@@ -76,7 +79,7 @@ const query = graphql`
 				}
 				contentful_id
 				image {
-					gatsbyImageData(placeholder: TRACED_SVG, layout: CONSTRAINED, aspectRatio: 1, height: 450, width: 450)
+					gatsbyImageData(placeholder: TRACED_SVG, layout: CONSTRAINED, height: 400, width: 400, quality: 100)
 				}
 				imageAlt
 			}

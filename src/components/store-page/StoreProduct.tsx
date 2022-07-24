@@ -16,7 +16,7 @@ const StoreProduct = (props: StoreProductPropTypes) => {
 						<div className="mt-10 border-b border-gray-200 pb-10">
 							<h3
 								id="heading"
-								className="mx-auto mt-3 max-w-md font-roman text-2xl capitalize text-gray-900 sm:text-2xl md:mt-2 md:max-w-3xl md:text-2xl"
+								className="mx-auto mt-3 max-w-md font-roman text-2xl capitalize italic text-gray-900 sm:text-2xl md:mt-2 md:max-w-3xl md:text-2xl"
 							>
 								{product.type}
 							</h3>
@@ -28,13 +28,13 @@ const StoreProduct = (props: StoreProductPropTypes) => {
 							</h2>
 						</div>
 						<dl className="mt-10 space-y-5 font-roman">
-							<dt className="text-lg font-bold text-secondary">Description</dt>
-							<dd className="text-md text-secondary">{product.description.description}</dd>
-							<dt className="text-lg font-bold text-secondary">Usage</dt>
-							<dd className="text-md text-secondary">{product.usage}</dd>
-							<dt className="text-lg font-bold text-secondary">Notes</dt>
-							<dd className="text-md text-secondary">{product.notes}</dd>
-							<dd className="text-md text-secondary">{product.notes2}</dd>
+							<dt className="text-xl font-bold text-secondary">Description</dt>
+							<dd className="text-lg font-bold text-gray-500">{product.description.description}</dd>
+							<dt className="text-xl font-bold text-secondary">Usage</dt>
+							<dd className="text-lg font-bold text-gray-500">{product.usage}</dd>
+							<dt className="text-xl font-bold text-secondary">Notes</dt>
+							<dd className="text-lg font-bold text-gray-500">{product.notes}</dd>
+							<dd className="text-lg font-bold text-gray-500">{product.notes2}</dd>
 						</dl>
 						<a href={product.etsyUrl} target="_blank">
 							<button

@@ -6,7 +6,7 @@ import Paragraph from '../typography/Paragraph';
 
 const StoreHero = () => {
 	return (
-		<div className="bg-primary">
+		<div className="bg-primary font-roman">
 			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 				<div className="rounded-2xl bg-primary px-6 sm:p-5">
 					<div className="mx-auto max-w-xl lg:max-w-none">
@@ -16,7 +16,7 @@ const StoreHero = () => {
 									<div className="sm:flex-shrink-0">
 										<div className="flow-root">{incentive.icon}</div>
 									</div>
-									<div className="mt-3 sm:mt-0 sm:ml-6 lg:mt-6 lg:ml-0">
+									<div className="mt-3 font-bold sm:mt-0 sm:ml-6 lg:mt-6 lg:ml-0">
 										<Heading heading={incentive.name} />
 										<Paragraph text={incentive.description} />
 									</div>

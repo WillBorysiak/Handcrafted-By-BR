@@ -18,7 +18,7 @@
 <div align="center">
   <div style="display: flex; flex-direction: row">
     <img align="center" src="https://symbols.getvecta.com/stencil_81/10_gatsbyjs-icon.1eebf66862.svg" alt="HTML" height="50"/>
-    <p align="center">Gatsby</p>
+    <p align="center">GatsbyJS</p>
   </div>
 </div>
 
@@ -50,7 +50,7 @@
 <p align="center">Develop my ability to use React hooks, mainly useState, useReducer and useEffect in this project.</p>
  
 <p align="center">Using Typescript with React to allow static typing during development to prevent possible bugs and grant better scalability.</p>
-<p align="center">Utilising Gatsby (meta framework of React) to provide SSG for my site alongside built in routing, pagination and image optimisation.</p>
+<p align="center">Utilising GatsbyJS (meta framework of React) to provide SSG for my site alongside built in routing, pagination and image optimisation.</p>
 <p align="center">Using Graphql to pull data from the Contentful CMS to allow page content to be easily updated.</p>
 <p align="center">Using Tailwind CSS and Tailwind UI to style my components and allow an effective mobile first approach.</p>
 <p align="center">How to communicate with a client to relay progress, updates and issues. Maintaining consistency with their initial design draft.</p>

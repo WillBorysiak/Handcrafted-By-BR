@@ -25,7 +25,7 @@ const HomeHero = () => {
 							</div>
 						</div>
 
-						<div className="font-roman">
+						<div className="font-roman font-bold">
 							<p className="mt-4 text-center text-xl text-gray-500 md:mt-8">Planned from your imagination.</p>
 							<p className="mt-4 text-center text-xl text-gray-500">Sketched and drawn by hand.</p>
 							<p className="mt-4 text-center text-xl text-gray-500">Sewn together beautifully.</p>
