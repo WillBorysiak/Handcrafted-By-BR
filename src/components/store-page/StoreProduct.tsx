@@ -47,7 +47,7 @@ const StoreProduct = (props: StoreProductPropTypes) => {
 					</div>
 
 					<div>
-						<div className="overflow-hidden rounded-lg ">
+						<div className="overflow-hidden rounded-sm shadow-xl">
 							<GatsbyImage
 								image={product.mainImage.gatsbyImageData}
 								alt={product.title}
@@ -55,14 +55,14 @@ const StoreProduct = (props: StoreProductPropTypes) => {
 							/>
 						</div>
 						<div className="mt-4 grid grid-cols-2 gap-4 sm:mt-6 sm:gap-6 lg:mt-8 lg:gap-8">
-							<div className="overflow-hidden rounded-lg">
+							<div className="overflow-hidden rounded-sm shadow-xl">
 								<GatsbyImage
 									image={product.secondaryImageOne.gatsbyImageData}
 									alt={product.title}
 									className="h-full w-full object-cover object-center"
 								/>
 							</div>
-							<div className="overflow-hidden rounded-lg">
+							<div className="overflow-hidden rounded-sm shadow-xl">
 								<GatsbyImage
 									image={product.secondaryImageTwo.gatsbyImageData}
 									alt={product.title}

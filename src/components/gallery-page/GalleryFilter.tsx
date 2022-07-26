@@ -73,7 +73,7 @@ const GalleryFilter = () => {
 	}, []);
 
 	return (
-		<div className="bg-primary">
+		<div className="bg-primary font-roman font-bold">
 			<div>
 				{/* Mobile filter dialog */}
 				<Transition.Root show={mobileFiltersOpen} as={Fragment}>
@@ -104,7 +104,7 @@ const GalleryFilter = () => {
 
 								<Dialog.Panel className="relative ml-auto flex h-full  w-full max-w-xs flex-col overflow-y-auto bg-secondary py-4 pb-12 shadow-xl">
 									<div className="flex items-center justify-between px-4">
-										<h2 className="text-lg font-medium text-primary">Filters</h2>
+										<h2 className="font-roman text-lg  font-bold text-primary">Filters</h2>
 										<button
 											type="button"
 											className="-mr-2 flex h-10 w-10 items-center justify-center rounded-md bg-primary p-2 text-secondary"
@@ -119,7 +119,7 @@ const GalleryFilter = () => {
 
 									<form className="mt-4 border-t border-gray-200">
 										<h3 className="sr-only">Categories</h3>
-										<ul role="list" className="px-2 py-3 font-medium text-primary">
+										<ul role="list" className="px-2 py-3 font-roman font-medium text-primary">
 											{productTypes.map(type => (
 												<li
 													className={classNames(type.current ? 'border-b-4 border-primary font-bold' : '')}
@@ -130,7 +130,7 @@ const GalleryFilter = () => {
 														dispatch({ type: 'filterType', payload: type.value });
 													}}
 												>
-													<a className="block px-2 py-3">{type.name}</a>
+													<a className="block px-2 py-3  text-lg">{type.name}</a>
 												</li>
 											))}
 										</ul>
@@ -138,12 +138,12 @@ const GalleryFilter = () => {
 										{/* Mobile Filters */}
 
 										{filters.map(section => (
-											<Disclosure as="div" key={section.id} className="border-t border-gray-200 px-4 py-6">
+											<Disclosure as="div" key={section.id} className="border-t border-gray-200 px-4 py-6 font-roman">
 												{({ open }) => (
 													<>
 														<h3 className="-mx-2 -my-3 flow-root">
 															<Disclosure.Button className="flex w-full items-center justify-between bg-primary px-2 py-3 text-secondary hover:text-gray-500">
-																<span className="font-medium text-secondary">{section.name}</span>
+																<span className=" font-bold text-secondary">{section.name}</span>
 																<span className="ml-6 flex items-center">
 																	{open ? (
 																		<MinusSmIcon className="h-5 w-5" aria-hidden="true" />
@@ -163,7 +163,7 @@ const GalleryFilter = () => {
 																			defaultValue={option.value}
 																			type="checkbox"
 																			defaultChecked={option.checked}
-																			className="h-4 w-4 rounded border-gray-300 text-primary accent-primary focus:ring-primary "
+																			className="h-4 w-4 rounded border-gray-300 text-primary accent-primary focus:ring-primary"
 																			onInput={() => {
 																				option.checked = !option.checked;
 																				dispatch({
@@ -190,7 +190,7 @@ const GalleryFilter = () => {
 										<div className="pl-2 pt-2">
 											<button
 												type="button"
-												className="inline-flex items-center rounded-md border border-primary bg-secondary px-4 py-2 text-base font-medium text-primary shadow-sm hover:bg-gray-600"
+												className="inline-flex items-center rounded-md border border-primary bg-secondary px-4 py-2 font-roman text-base font-bold text-primary shadow-sm hover:bg-gray-600"
 												onClick={() => {
 													sortOptions.forEach(item => (item.current = false));
 													sortOptions[0].current = true;
@@ -214,11 +214,11 @@ const GalleryFilter = () => {
 				{/* Shared UI */}
 
 				<main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-					<div className="relative z-10 flex items-baseline justify-end border-b border-secondary pb-6">
+					<div className="relative z-10 flex items-baseline justify-end border-b border-secondary pb-6 font-roman">
 						<div className="flex items-center">
 							<Menu as="div" className="relative inline-block text-left">
 								<div>
-									<Menu.Button className="text-secondar group inline-flex justify-center text-sm font-medium hover:text-gray-900">
+									<Menu.Button className="text-secondar text-md group inline-flex justify-center font-bold hover:text-gray-900 md:text-lg">
 										Sort
 										<ChevronDownIcon
 											className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-secondary group-hover:text-gray-500"
@@ -250,9 +250,9 @@ const GalleryFilter = () => {
 																dispatch({ type: 'sort', payload: option.value });
 															}}
 															className={classNames(
-																option.current ? 'font-medium text-secondary' : 'text-gray-500',
+																option.current ? 'font-bold text-secondary' : 'text-gray-500',
 																active ? 'bg-gray-200 hover:cursor-pointer' : '',
-																'r r block px-4 py-2 text-sm',
+																' text-md block px-4 py-2 md:text-lg',
 															)}
 														>
 															{option.name}
@@ -264,13 +264,6 @@ const GalleryFilter = () => {
 									</Menu.Items>
 								</Transition>
 							</Menu>
-
-							{/* Grid Button */}
-
-							<button type="button" className="-m-2 ml-5 p-2 text-secondary hover:text-gray-500 sm:ml-7">
-								<span className="sr-only">View grid</span>
-								<ViewGridIcon className="h-5 w-5" aria-hidden="true" />
-							</button>
 
 							{/* Open Filter Button */}
 
@@ -285,7 +278,7 @@ const GalleryFilter = () => {
 						</div>
 					</div>
 
-					<section aria-labelledby="products-heading" className="pt-6 pb-24">
+					<section aria-labelledby="products-heading" className="pt-5 pb-5">
 						<h2 id="products-heading" className="sr-only">
 							Products
 						</h2>
@@ -296,7 +289,7 @@ const GalleryFilter = () => {
 							{/* Filters */}
 							<form className="hidden lg:block">
 								<h3 className="sr-only">Categories</h3>
-								<ul role="list" className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-secondary">
+								<ul role="list" className="space-y-4 border-b border-gray-200 pb-5 text-sm  font-bold text-secondary">
 									{productTypes.map(type => (
 										<li
 											key={type.name}
@@ -309,7 +302,7 @@ const GalleryFilter = () => {
 												dispatch({ type: 'filterType', payload: type.value });
 											}}
 										>
-											<a>{type.name}</a>
+											<a className="text-lg">{type.name}</a>
 										</li>
 									))}
 								</ul>
@@ -320,7 +313,7 @@ const GalleryFilter = () => {
 											<>
 												<h3 className="-my-3 flow-root">
 													<Disclosure.Button className="flex w-full items-center justify-between bg-primary py-3 text-sm text-secondary hover:text-gray-500">
-														<span className="font-medium text-secondary">{section.name}</span>
+														<span className="font-roman text-lg font-bold text-secondary">{section.name}</span>
 														<span className="ml-6 flex items-center">
 															{open ? (
 																<MinusSmIcon className="h-5 w-5" aria-hidden="true" />
@@ -343,7 +336,7 @@ const GalleryFilter = () => {
 																	defaultValue={option.value}
 																	type="checkbox"
 																	checked={option.checked}
-																	className="h-4 w-4 rounded border-gray-300 accent-secondary focus:ring-secondary"
+																	className=" h-4 w-4 rounded border-gray-300 accent-secondary focus:ring-secondary"
 																	onInput={() => {
 																		option.checked = !option.checked;
 																		dispatch({
@@ -355,7 +348,7 @@ const GalleryFilter = () => {
 																/>
 																<label
 																	htmlFor={`filter-${section.id}-${optionIdx}`}
-																	className="ml-3 text-sm text-secondary"
+																	className="text-md ml-3 text-secondary"
 																>
 																	{option.label}
 																</label>

@@ -12,7 +12,10 @@ const StoreHero = () => {
 					<div className="mx-auto max-w-xl lg:max-w-none">
 						<div className="mx-auto grid max-w-sm grid-cols-1 gap-y-5 gap-x-8 sm:max-w-none lg:grid-cols-3">
 							{incentives.map(incentive => (
-								<div key={incentive.name} className="text-center sm:flex sm:text-left lg:block lg:text-center">
+								<div
+									key={incentive.name}
+									className="p-2 text-center shadow-xl sm:flex sm:text-left lg:block lg:text-center"
+								>
 									<div className="sm:flex-shrink-0">
 										<div className="flow-root">{incentive.icon}</div>
 									</div>

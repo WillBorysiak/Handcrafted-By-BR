@@ -11,10 +11,10 @@ const Footer = () => {
 				<div className="flex justify-center space-x-6 md:order-2">
 					<div className="flex w-1/2 flex-row justify-between">
 						<a href="https://www.instagram.com/handcrafted_by_barbararuth/?igshid=YmMyMTA2M2Y" target="_blank">
-							<FontAwesomeIcon className="pr-5 text-orange-200 hover:text-white" icon={faCameraRetro} size="2x" />
+							<FontAwesomeIcon className="pr-5 text-orange-200 hover:text-white" icon={faCameraRetro} size="3x" />
 						</a>
 						<a href="https://www.etsy.com/uk/shop/HandcraftedbyBRuth" target="_blank">
-							<FontAwesomeIcon className=" text-orange-200 hover:text-white" icon={faCashRegister} size="2x" />
+							<FontAwesomeIcon className=" text-orange-200 hover:text-white" icon={faCashRegister} size="3x" />
 						</a>
 					</div>
 				</div>

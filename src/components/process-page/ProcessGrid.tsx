@@ -33,24 +33,21 @@ const ProcessGrid = () => {
 						<div
 							id={`${process.contentful_id}`}
 							key={process.contentful_id}
-							className="flex flex-col-reverse lg:grid lg:grid-cols-4 lg:items-center lg:gap-x-8"
+							className="flex flex-col-reverse p-2 shadow-2xl lg:grid lg:grid-cols-4 lg:items-center lg:gap-x-8 "
 						>
-							<div className={classNames('mt-6  lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4')}>
+							<div className={classNames('mt-6 lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4')}>
 								<h2
 									id="sub-title"
 									className=" font-roman text-2xl font-extrabold tracking-wider text-gray-900 sm:text-3xl "
 								>
 									{process.title}
 								</h2>
-								<p
-									id="paragraph"
-									className="mt-3 border-dashed border-white pb-5 text-base font-bold text-gray-500 sm:border-b md:text-xl"
-								>
+								<p id="paragraph" className="mt-3  pb-5 text-base font-bold text-gray-500  md:text-xl">
 									{process.body.body}
 								</p>
 							</div>
 							<div className={classNames('flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8')}>
-								<div className="flex w-full items-center justify-center overflow-hidden rounded-sm">
+								<div className="flex w-full items-center justify-center overflow-hidden rounded-sm ">
 									<GatsbyImage
 										image={process.image.gatsbyImageData}
 										alt={process.imageAlt}
@@ -58,7 +55,6 @@ const ProcessGrid = () => {
 									/>
 								</div>
 							</div>
-							<div className="mb-5 border-b border-dashed border-white sm:hidden" />
 						</div>
 					))}
 				</div>

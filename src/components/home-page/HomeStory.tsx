@@ -12,7 +12,7 @@ const HomeStory = () => {
 	const stories = data.allContentfulHomeStory.nodes;
 
 	return (
-		<section className="relative bg-stone-200 px-4 pt-5 pb-5 font-roman sm:px-6 lg:px-8 lg:pb-10 lg:pt-5">
+		<section className="relative bg-primary px-4 pt-5 pb-5 font-roman sm:px-6 lg:px-8 lg:pb-10 lg:pt-5">
 			<div className="absolute inset-0">
 				<div className="bg-stone-20 h-1/3 sm:h-2/3" />
 			</div>
@@ -22,7 +22,7 @@ const HomeStory = () => {
 				</div>
 				<div className="mx-auto mt-5 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
 					{stories.map((story: StoryTypes) => (
-						<article key={story.contentful_id} className="flex flex-col overflow-hidden rounded-lg shadow-lg">
+						<article key={story.contentful_id} className="flex flex-col overflow-hidden rounded-sm shadow-lg">
 							<div className="flex-shrink-0">
 								<GatsbyImage
 									className="h-48 w-full object-cover"
@@ -30,7 +30,7 @@ const HomeStory = () => {
 									alt="Placeholder image"
 								/>
 							</div>
-							<div className="flex flex-1 flex-col justify-between bg-white p-3 ">
+							<div className="flex flex-1 flex-col justify-between p-3">
 								<div className="flex-1">
 									<div className="mt-2 block">
 										<ParagraphTitle title={story.title} />

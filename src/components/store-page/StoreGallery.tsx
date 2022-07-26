@@ -16,9 +16,9 @@ const StoreGallery = () => {
 
 				<div className="grid grid-cols-1 gap-y-5 gap-x-5 sm:grid-cols-2 xl:gap-x-5">
 					{products.map((product: ProductTypes) => (
-						<article key={product.contentful_id} className="w-full">
+						<article key={product.contentful_id} className="w-full pb-2 shadow-xl">
 							<Link to={product.url} className=" group">
-								<div className="w-full overflow-hidden rounded-sm p-0">
+								<div className="w-full overflow-hidden rounded-sm">
 									<GatsbyImage
 										image={product.productImage.gatsbyImageData}
 										alt={product.title}

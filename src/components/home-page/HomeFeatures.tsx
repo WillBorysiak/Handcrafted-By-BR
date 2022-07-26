@@ -30,9 +30,9 @@ const HomeFeatures = () => {
 					</div>
 					<dl className="mt-5 space-y-5 font-bold sm:grid sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 sm:space-y-0 lg:col-span-2 lg:mt-0">
 						{features.map((feature: FeatureTypes) => (
-							<article key={feature.contentful_id}>
+							<article key={feature.contentful_id} className="p-2 shadow-lg">
 								<dt>
-									<div className="mb-3 flex h-12 w-12 items-center justify-center rounded-md bg-secondary text-white">
+									<div className="mb-3 flex h-12 w-12 items-center justify-center rounded-sm bg-secondary text-white ">
 										{feature.penIcon && penIcon}
 										{feature.scissorsIcon && scissorsIcon}
 										{feature.spaceIcon && spaceIcon}

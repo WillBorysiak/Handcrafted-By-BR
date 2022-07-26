@@ -6,6 +6,8 @@ import Title from '../components/typography/Title';
 import HomeHero from '../components/home-page/HomeHero';
 import HomeStory from '../components/home-page/HomeStory';
 import HomeFeatures from '../components/home-page/HomeFeatures';
+import HomeItems from '../components/home-page/HomeItems';
+import HomeReminder from '../components/home-page/HomeReminder';
 
 const HomePage = () => {
 	return (
@@ -14,8 +16,10 @@ const HomePage = () => {
 				<SEO title="Home" description="Just lovely handcrafted products made in Derbyshire, England" />
 				<Title title="Handcrafted by BarbaraRuth" />
 				<HomeHero />
+				<HomeItems />
 				<HomeStory />
 				<HomeFeatures />
+				<HomeReminder />
 			</Layout>
 		</>
 	);

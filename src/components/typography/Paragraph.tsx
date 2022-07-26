@@ -6,7 +6,7 @@ interface ParagraphTypes {
 
 const Paragraph = (props: ParagraphTypes) => {
 	return (
-		<p id="paragraph" className="mt-3 text-base text-gray-500 md:text-lg">
+		<p id="paragraph" className="mt-3 text-base font-bold text-gray-500 md:text-lg">
 			{props.text}
 		</p>
 	);
