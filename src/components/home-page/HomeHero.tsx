@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { scrollAnimationVariants } from '../utils/scrollAnimationVariants';
 import { StaticImage, GatsbyImage } from 'gatsby-plugin-image';
 import { graphql, useStaticQuery } from 'gatsby';
 
@@ -9,8 +11,13 @@ const HomeHero = () => {
 	const images = data.allContentfulHomeHeroImages.nodes[0].heroImages;
 
 	return (
-		<section className="relative overflow-hidden bg-primary dark:bg-secondary">
-			<div className=" pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
+		<motion.section
+			initial="hidden"
+			animate="visible"
+			variants={scrollAnimationVariants}
+			className="relative overflow-hidden"
+		>
+			<div className="pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-4">
 				<div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
 					<div className="sm:max-w-lg">
 						<div className="flex flex-col items-center ">
@@ -102,7 +109,7 @@ const HomeHero = () => {
 					</div>
 				</div>
 			</div>
-		</section>
+		</motion.section>
 	);
 };
 

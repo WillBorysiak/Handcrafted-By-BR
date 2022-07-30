@@ -8,7 +8,7 @@ interface LayoutPropTypes {
 
 const Layout = (props: LayoutPropTypes) => {
 	return (
-		<div>
+		<div className="bg-primary dark:bg-secondary">
 			<Navbar />
 			{props.children}
 			<Footer />

@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { scrollAnimationVariants } from '../utils/scrollAnimationVariants';
 
 import incentives from '../../data/store-incentives';
 import Heading from '../typography/Heading';
@@ -6,7 +8,7 @@ import Paragraph from '../typography/Paragraph';
 
 const StoreHero = () => {
 	return (
-		<div className="bg-primary font-roman">
+		<motion.div initial="hidden" animate="visible" variants={scrollAnimationVariants} className="font-roman">
 			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 				<div className="rounded-2xl bg-primary px-6 sm:p-5">
 					<div className="mx-auto max-w-xl lg:max-w-none">
@@ -29,7 +31,7 @@ const StoreHero = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

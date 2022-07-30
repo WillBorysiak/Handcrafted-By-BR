@@ -1,10 +1,17 @@
 import React from 'react';
-
+import { motion } from 'framer-motion';
+import { scrollAnimationVariants } from '../utils/scrollAnimationVariants';
 import SubTitle from '../typography/SubTitle';
 
 const HomeIncentives = () => {
 	return (
-		<div className="bg-primary pt-12 font-roman sm:pt-16">
+		<motion.div
+			initial="hidden"
+			whileInView="visible"
+			viewport={{ once: true }}
+			variants={scrollAnimationVariants}
+			className="bg-primary pt-12 font-roman sm:pt-16"
+		>
 			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 				<div className="mx-auto max-w-4xl text-center font-bold">
 					<SubTitle title="In Case You Didn't Realise Already!" />
@@ -32,7 +39,7 @@ const HomeIncentives = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

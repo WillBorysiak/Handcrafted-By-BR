@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Fragment, useState, useReducer } from 'react';
+import { motion } from 'framer-motion';
+import { scrollAnimationVariants } from '../utils/scrollAnimationVariants';
 import { FilterAction } from '../../../models/gallery-page/filter.model';
 
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react';
@@ -73,7 +75,12 @@ const GalleryFilter = () => {
 	}, []);
 
 	return (
-		<div className="bg-primary font-roman font-bold">
+		<motion.section
+			initial="hidden"
+			animate="visible"
+			variants={scrollAnimationVariants}
+			className="bg-primary font-roman font-bold"
+		>
 			<div>
 				{/* Mobile filter dialog */}
 				<Transition.Root show={mobileFiltersOpen} as={Fragment}>
@@ -404,7 +411,7 @@ const GalleryFilter = () => {
 					</section>
 				</main>
 			</div>
-		</div>
+		</motion.section>
 	);
 };
 
