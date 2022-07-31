@@ -5,6 +5,11 @@ require('dotenv').config({
 });
 
 const config: GatsbyConfig = {
+	siteMetadata: {
+		title: 'Handcrafted By Barbara Ruth',
+		description: 'Just lovely handcrafted products made in Derbyshire, England',
+		siteUrl: 'https://www.handcrafted-by-barbara-ruth.com/',
+	},
 	plugins: [
 		'gatsby-plugin-postcss',
 		`gatsby-plugin-image`,
@@ -22,8 +27,27 @@ const config: GatsbyConfig = {
 			resolve: `gatsby-source-contentful`,
 			options: {
 				spaceId: process.env.CONTENTFUL_SPACE_ID,
-				// Learn about environment variables: https://gatsby.dev/env-vars
 				accessToken: process.env.CONTENTFUL_API_KEY,
+			},
+		},
+		{
+			resolve: `gatsby-plugin-sitemap`,
+			options: {
+				output: '/sitemap',
+			},
+		},
+		{
+			resolve: 'gatsby-plugin-robots-txt',
+			options: {
+				host: 'https://www.handcrafted-by-barbara-ruth.com/',
+				env: {
+					development: {
+						policy: [{ userAgent: '*', disallow: ['/'] }],
+					},
+					production: {
+						policy: [{ userAgent: '*', allow: '/' }],
+					},
+				},
 			},
 		},
 	],
