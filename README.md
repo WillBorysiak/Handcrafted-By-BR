@@ -10,21 +10,21 @@
  
 <div align="center">
   <div style="display: flex; flex-direction: row">
-    <img align="center" src="https://symbols.getvecta.com/stencil_94/22_react-icon.e55e75bd2e.svg" alt="HTML" height="50"/>
+    <img align="center" src="/assets/readme-icons/react-logo.svg" alt="HTML" height="50"/>
     <p align="center">React</p>
  </div>
 </div>
    
 <div align="center">
   <div style="display: flex; flex-direction: row">
-    <img align="center" src="https://symbols.getvecta.com/stencil_81/10_gatsbyjs-icon.1eebf66862.svg" alt="HTML" height="50"/>
+    <img align="center" src="/assets/readme-icons/gatsbyjs-logo.svg" alt="HTML" height="50"/>
     <p align="center">GatsbyJS</p>
   </div>
 </div>
 
 <div align="center">
   <div style="display: flex; flex-direction: row">
-    <img align="center" src="https://symbols.getvecta.com/stencil_97/3_tailwind-css-icon.5009c3dbea.svg" alt="HTML" height="50"/>
+    <img align="center" src="/assets/readme-icons/tailwindcss-logo.svg" alt="HTML" height="50"/>
     <p align="center">Tailwind CSS</p>
   </div>
 </div>
@@ -32,14 +32,14 @@
    
 <div align="center">
   <div style="display: flex; flex-direction: row">
-    <img align="center" src="https://symbols.getvecta.com/stencil_82/66_graphql-icon.cdedad214a.svg" alt="HTML" height="50"/>
+    <img align="center" src="/assets/readme-icons/graphql-logo.svg" alt="HTML" height="50"/>
     <p align="center">Graphql</p>
   </div>
 </div>
  
 <div align="center">
   <div style="display: flex; flex-direction: row">
-    <img align="center" src="https://seeklogo.com/images/C/contentful-logo-C395C545BF-seeklogo.com.png" alt="HTML" height="50"/>
+    <img align="center" src="/assets/readme-icons/contentful-logo.svg" alt="HTML" height="50"/>
     <p align="center">Contentful</p>
   </div>
 </div>
