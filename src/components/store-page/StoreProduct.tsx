@@ -1,16 +1,15 @@
 import React from 'react';
+import StoreNav from './StoreNav';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { motion } from 'framer-motion';
 import { scrollAnimationVariants } from '../utils/scrollAnimationVariants';
 import { StoreProductPropTypes } from '../../../models/store-page/product.model';
 
-import StoreNav from './StoreNav';
-
 const StoreProduct = (props: StoreProductPropTypes) => {
 	const product = props.productData;
 
 	return (
-		<div className="mx-auto max-w-2xl py-10 px-4 sm:py-5 sm:px-6 lg:max-w-7xl lg:px-8">
+		<div className="mx-auto my-10 max-w-2xl py-10 px-4 sm:py-5 sm:px-6 lg:max-w-7xl lg:px-8">
 			<div className="grid grid-cols-1 items-center gap-y-5 gap-x-8 lg:grid-cols-2">
 				<motion.div initial="hidden" animate="visible" variants={scrollAnimationVariants}>
 					<StoreNav currentPage={props.currentPage} />

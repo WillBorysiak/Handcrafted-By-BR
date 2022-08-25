@@ -1,9 +1,8 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-
+import Favicons from '../../layout/Favicons';
 import Layout from '../../layout/Layout';
-import SEO from '../../layout/SEO';
+import React from 'react';
 import StoreProduct from '../../components/store-page/StoreProduct';
+import { graphql } from 'gatsby';
 
 const StoreProductPage = (props: any) => {
 	const productData = props.data.contentfulStoreProducts;
@@ -11,7 +10,6 @@ const StoreProductPage = (props: any) => {
 
 	return (
 		<Layout>
-			<SEO title="Forest Drawstring" description="View my commercial product and purchase it from Etsy!" />
 			<StoreProduct productData={productData} currentPage={currentPage} />
 		</Layout>
 	);
@@ -43,3 +41,19 @@ export const query = graphql`
 		}
 	}
 `;
+
+// SEO Head
+
+export const Head = () => {
+	const title = 'Store';
+	const metaTitle = 'Handcrafted by BR';
+	const description = 'Just lovely handcrafted products made in Derbyshire, England';
+
+	return (
+		<>
+			<title>{`${title} | ${metaTitle}`}</title>
+			<meta name="description" content={description}></meta>
+			<Favicons />
+		</>
+	);
+};

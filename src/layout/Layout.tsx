@@ -1,6 +1,6 @@
-import React from 'react';
-import Navbar from './Navbar';
 import Footer from './Footer';
+import Navbar from './Navbar';
+import React from 'react';
 
 interface LayoutPropTypes {
 	children: React.ReactNode;
@@ -8,7 +8,7 @@ interface LayoutPropTypes {
 
 const Layout = (props: LayoutPropTypes) => {
 	return (
-		<div className="bg-primary dark:bg-secondary">
+		<div className="bg-primary">
 			<Navbar />
 			{props.children}
 			<Footer />

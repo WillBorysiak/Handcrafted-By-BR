@@ -1,19 +1,17 @@
-import React from 'react';
-
-import Layout from '../layout/Layout';
-import SEO from '../layout/SEO';
-import Title from '../components/typography/Title';
-import HomeHero from '../components/home-page/HomeHero';
-import HomeStory from '../components/home-page/HomeStory';
+import Favicons from '../layout/Favicons';
 import HomeFeatures from '../components/home-page/HomeFeatures';
+import HomeHero from '../components/home-page/HomeHero';
 import HomeItems from '../components/home-page/HomeItems';
 import HomeReminder from '../components/home-page/HomeReminder';
+import HomeStory from '../components/home-page/HomeStory';
+import Layout from '../layout/Layout';
+import React from 'react';
+import Title from '../components/typography/Title';
 
 const HomePage = () => {
 	return (
 		<>
 			<Layout>
-				<SEO title="Home" description="Just lovely handcrafted products made in Derbyshire, England" />
 				<Title title="Handcrafted by BarbaraRuth" />
 				<HomeHero />
 				<HomeItems />
@@ -26,3 +24,19 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+// SEO Head
+
+export const Head = () => {
+	const title = 'Home';
+	const metaTitle = 'Handcrafted by BR';
+	const description = 'Just lovely handcrafted products made in Derbyshire, England';
+
+	return (
+		<>
+			<title>{`${title} | ${metaTitle}`}</title>
+			<meta name="description" content={description}></meta>
+			<Favicons />
+		</>
+	);
+};

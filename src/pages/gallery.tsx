@@ -1,14 +1,12 @@
-import React from 'react';
-
-import Layout from '../layout/Layout';
-import SEO from '../layout/SEO';
-import Title from '../components/typography/Title';
+import Favicons from '../layout/Favicons';
 import GalleryFilter from '../components/gallery-page/GalleryFilter';
+import Layout from '../layout/Layout';
+import React from 'react';
+import Title from '../components/typography/Title';
 
 const GalleryPage = () => {
 	return (
 		<Layout>
-			<SEO title="Gallery" description="A gallery of all my products, current and old!" />
 			<Title title="Gallery" />
 			<GalleryFilter />
 		</Layout>
@@ -16,3 +14,19 @@ const GalleryPage = () => {
 };
 
 export default GalleryPage;
+
+// SEO Head
+
+export const Head = () => {
+	const title = 'Gallery';
+	const metaTitle = 'Handcrafted by BR';
+	const description = 'Just lovely handcrafted products made in Derbyshire, England';
+
+	return (
+		<>
+			<title>{`${title} | ${metaTitle}`}</title>
+			<meta name="description" content={description}></meta>
+			<Favicons />
+		</>
+	);
+};

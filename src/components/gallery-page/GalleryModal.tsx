@@ -1,8 +1,8 @@
 import React from 'react';
+import { Dialog, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 import { GalleryModalTypes } from '../../../models/gallery-page/modal.model';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { Dialog, Transition } from '@headlessui/react';
 
 const GalleryModal = (props: GalleryModalTypes) => {
 	return (
@@ -34,7 +34,7 @@ const GalleryModal = (props: GalleryModalTypes) => {
 							<Dialog.Panel className="relative transform overflow-hidden rounded-sm  pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
 								<div>
 									<div className="mx-auto flex items-center justify-center rounded-full">
-										<GatsbyImage image={props.image} alt="" />
+										<GatsbyImage image={props.image} alt="A modal of a product" />
 									</div>
 									<div className="">
 										<Dialog.Title as="h3" className="" />

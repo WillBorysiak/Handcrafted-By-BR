@@ -1,18 +1,33 @@
-import React from 'react';
-
+import Favicons from '../layout/Favicons';
 import Layout from '../layout/Layout';
-import SEO from '../layout/SEO';
-import Title from '../components/typography/Title';
 import ProcessGrid from '../components/process-page/ProcessGrid';
+import React from 'react';
+import Title from '../components/typography/Title';
 
 const ProcessPage = () => {
 	return (
 		<Layout>
-			<SEO title="Process" description="How I make my products, from start to finish!" />
 			<Title title="Design Process" />
 			<ProcessGrid />
+			66
 		</Layout>
 	);
 };
 
 export default ProcessPage;
+
+// SEO Head
+
+export const Head = () => {
+	const title = 'Process';
+	const metaTitle = 'Handcrafted by BR';
+	const description = 'Just lovely handcrafted products made in Derbyshire, England';
+
+	return (
+		<>
+			<title>{`${title} | ${metaTitle}`}</title>
+			<meta name="description" content={description}></meta>
+			<Favicons />
+		</>
+	);
+};

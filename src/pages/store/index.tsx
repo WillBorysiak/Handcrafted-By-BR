@@ -1,15 +1,13 @@
-import React from 'react';
-
+import Favicons from '../../layout/Favicons';
 import Layout from '../../layout/Layout';
-import SEO from '../../layout/SEO';
-import Title from '../../components/typography/Title';
+import React from 'react';
 import StoreGallery from '../../components/store-page/StoreGallery';
 import StoreHero from '../../components/store-page/StoreHero';
+import Title from '../../components/typography/Title';
 
 const StorePage = () => {
 	return (
 		<Layout>
-			<SEO title="Store" description="View all my live listings on my Etsy store!" />
 			<Title title="Store" />
 			<StoreHero />
 			<StoreGallery />
@@ -18,3 +16,19 @@ const StorePage = () => {
 };
 
 export default StorePage;
+
+// SEO Head
+
+export const Head = () => {
+	const title = 'Store';
+	const metaTitle = 'Handcrafted by BR';
+	const description = 'Just lovely handcrafted products made in Derbyshire, England';
+
+	return (
+		<>
+			<title>{`${title} | ${metaTitle}`}</title>
+			<meta name="description" content={description}></meta>
+			<Favicons />
+		</>
+	);
+};

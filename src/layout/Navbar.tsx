@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'gatsby';
-
-import { Disclosure } from '@headlessui/react';
-import { MenuIcon, XIcon } from '@heroicons/react/outline';
-import { navigation } from '../data/navbar-data';
+import { Bars4Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { classNames } from '../components/utils/classes';
+import { Disclosure } from '@headlessui/react';
+import { Link } from 'gatsby';
+import { navigation } from '../data/navbar-data';
+
 
 const Navbar = () => {
 	return (
@@ -18,9 +18,9 @@ const Navbar = () => {
 								<Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-orange-200 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
 									<span className="sr-only">Open main menu</span>
 									{open ? (
-										<XIcon className="block h-6 w-6" aria-hidden="true" />
+										<XMarkIcon className="block h-6 w-6" aria-hidden="true" />
 									) : (
-										<MenuIcon className="block h-6 w-6" aria-hidden="true" />
+										<Bars4Icon className="block h-6 w-6" aria-hidden="true" />
 									)}
 								</Disclosure.Button>
 							</div>

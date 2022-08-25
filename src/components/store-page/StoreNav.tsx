@@ -1,8 +1,8 @@
 import React from 'react';
+import { ChevronRightIcon, HomeIcon } from '@heroicons/react/24/outline';
 import { Link } from 'gatsby';
 import { StoreNavProps } from '../../../models/store-page/nav.model';
 
-import { ChevronRightIcon, HomeIcon } from '@heroicons/react/solid';
 
 const StoreNav = (props: StoreNavProps) => {
 	return (

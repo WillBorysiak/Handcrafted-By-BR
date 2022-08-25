@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
-
-import SubTitle from '../typography/SubTitle';
 import GalleryModal from '../gallery-page/GalleryModal';
+import React, { useState } from 'react';
+import SubTitle from '../typography/SubTitle';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
 interface ProductTypes {
 	title: string;

@@ -1,11 +1,11 @@
+import Heading from '../typography/Heading';
+import processArray from '../../data/process-nav-data';
 import React, { Fragment } from 'react';
+import { ChevronUpDownIcon } from '@heroicons/react/24/outline';
+import { classNames } from '../utils/classes';
+import { Listbox, Transition } from '@headlessui/react';
 import { ProcessNavPropTypes } from '../../../models/process-page/nav.model';
 
-import { Listbox, Transition } from '@headlessui/react';
-import { SelectorIcon } from '@heroicons/react/solid';
-import processArray from '../../data/process-nav-data';
-import Heading from '../typography/Heading';
-import { classNames } from '../utils/classes';
 
 const ProcessNav = (props: ProcessNavPropTypes) => {
 	return (
@@ -17,7 +17,7 @@ const ProcessNav = (props: ProcessNavPropTypes) => {
 						<Listbox.Button className="sm:text-md relative mt-2 w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-secondary focus:outline-none focus:ring-1 focus:ring-secondary">
 							<span className="block truncate">{props.selected.name}</span>
 							<span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
-								<SelectorIcon className="h-5 w-5 text-secondary" aria-hidden="true" />
+								<ChevronUpDownIcon className="h-5 w-5 text-secondary" aria-hidden="true" />
 							</span>
 						</Listbox.Button>
 

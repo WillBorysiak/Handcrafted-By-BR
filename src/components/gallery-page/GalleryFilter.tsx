@@ -1,17 +1,14 @@
+import GalleryGrid from './GalleryGrid';
 import React, { useEffect } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import { Fragment, useState, useReducer } from 'react';
+import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { classNames } from '../utils/classes';
+import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react';
+import { FilterAction } from '../../../models/gallery-page/filter.model';
+import { filters, productTypes, sortOptions } from '../../data/product-nav-data';
+import { Fragment, useReducer, useState } from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import { motion } from 'framer-motion';
 import { scrollAnimationVariants } from '../utils/scrollAnimationVariants';
-import { FilterAction } from '../../../models/gallery-page/filter.model';
-
-import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react';
-import { XIcon } from '@heroicons/react/outline';
-import { ChevronDownIcon, FilterIcon, MinusSmIcon, PlusSmIcon, ViewGridIcon } from '@heroicons/react/solid';
-
-import GalleryGrid from './GalleryGrid';
-import { productTypes, sortOptions, filters } from '../../data/product-nav-data';
-import { classNames } from '../utils/classes';
 
 const initialState = { sort: 'popular', filterType: undefined, filterColor: [], filterSeason: [] };
 
@@ -79,7 +76,7 @@ const GalleryFilter = () => {
 			initial="hidden"
 			animate="visible"
 			variants={scrollAnimationVariants}
-			className="bg-primary font-roman font-bold"
+			className="mb-10 bg-primary font-roman font-bold"
 		>
 			<div>
 				{/* Mobile filter dialog */}
@@ -118,7 +115,7 @@ const GalleryFilter = () => {
 											onClick={() => setMobileFiltersOpen(false)}
 										>
 											<span className="sr-only">Close menu</span>
-											<XIcon className="h-6 w-6" aria-hidden="true" />
+											<XMarkIcon className="h-6 w-6" aria-hidden="true" />
 										</button>
 									</div>
 
@@ -153,9 +150,9 @@ const GalleryFilter = () => {
 																<span className=" font-bold text-secondary">{section.name}</span>
 																<span className="ml-6 flex items-center">
 																	{open ? (
-																		<MinusSmIcon className="h-5 w-5" aria-hidden="true" />
+																		<MinusIcon className="h-5 w-5" aria-hidden="true" />
 																	) : (
-																		<PlusSmIcon className="h-5 w-5" aria-hidden="true" />
+																		<PlusIcon className="h-5 w-5" aria-hidden="true" />
 																	)}
 																</span>
 															</Disclosure.Button>
@@ -280,7 +277,7 @@ const GalleryFilter = () => {
 								onClick={() => setMobileFiltersOpen(true)}
 							>
 								<span className="sr-only">Filters</span>
-								<FilterIcon className="h-5 w-5" aria-hidden="true" />
+								<FunnelIcon className="h-5 w-5" aria-hidden="true" />
 							</button>
 						</div>
 					</div>
@@ -323,9 +320,9 @@ const GalleryFilter = () => {
 														<span className="font-roman text-lg font-bold text-secondary">{section.name}</span>
 														<span className="ml-6 flex items-center">
 															{open ? (
-																<MinusSmIcon className="h-5 w-5" aria-hidden="true" />
+																<MinusIcon className="h-5 w-5" aria-hidden="true" />
 															) : (
-																<PlusSmIcon className="h-5 w-5" aria-hidden="true" />
+																<PlusIcon className="h-5 w-5" aria-hidden="true" />
 															)}
 														</span>
 													</Disclosure.Button>
