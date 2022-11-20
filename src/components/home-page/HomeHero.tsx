@@ -1,8 +1,10 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { scrollAnimationVariants } from '../utils/scrollAnimationVariants';
 import { StaticImage, GatsbyImage } from 'gatsby-plugin-image';
 import { graphql, useStaticQuery } from 'gatsby';
+
+import { motion } from 'framer-motion';
+
+import { scrollAnimationVariants } from '../utils/scrollAnimationVariants';
 
 import SubTitle from '../typography/SubTitle';
 

@@ -1,11 +1,13 @@
-import Heading from '../typography/Heading';
-import processArray from '../../data/process-nav-data';
 import React, { Fragment } from 'react';
-import { ChevronUpDownIcon } from '@heroicons/react/24/outline';
-import { classNames } from '../utils/classes';
-import { Listbox, Transition } from '@headlessui/react';
-import { ProcessNavPropTypes } from '../../../models/process-page/nav.model';
 
+import { Listbox, Transition } from '@headlessui/react';
+import { ChevronUpDownIcon } from '@heroicons/react/24/outline';
+
+import { ProcessNavPropTypes } from '../../../models/process-page/nav.model';
+import processArray from '../../data/process-nav-data';
+import { classNames } from '../utils/classes';
+
+import Heading from '../typography/Heading';
 
 const ProcessNav = (props: ProcessNavPropTypes) => {
 	return (

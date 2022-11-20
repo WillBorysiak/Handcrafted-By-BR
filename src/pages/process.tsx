@@ -1,8 +1,9 @@
+import React from 'react';
+
+import ProcessGrid from '../components/process-page/ProcessGrid';
+import Title from '../components/typography/Title';
 import Favicons from '../layout/Favicons';
 import Layout from '../layout/Layout';
-import ProcessGrid from '../components/process-page/ProcessGrid';
-import React from 'react';
-import Title from '../components/typography/Title';
 
 const ProcessPage = () => {
 	return (

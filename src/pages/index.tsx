@@ -1,12 +1,13 @@
-import Favicons from '../layout/Favicons';
+import React from 'react';
+
 import HomeFeatures from '../components/home-page/HomeFeatures';
 import HomeHero from '../components/home-page/HomeHero';
 import HomeItems from '../components/home-page/HomeItems';
 import HomeReminder from '../components/home-page/HomeReminder';
 import HomeStory from '../components/home-page/HomeStory';
-import Layout from '../layout/Layout';
-import React from 'react';
 import Title from '../components/typography/Title';
+import Favicons from '../layout/Favicons';
+import Layout from '../layout/Layout';
 
 const HomePage = () => {
 	return (

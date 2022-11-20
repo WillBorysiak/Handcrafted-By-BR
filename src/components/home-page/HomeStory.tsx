@@ -1,13 +1,15 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { motion } from 'framer-motion';
-import { scrollAnimationVariants } from '../utils/scrollAnimationVariants';
-import { StoryTypes } from '../../../models/home-page/story.model';
 
-import SubTitle from '../typography/SubTitle';
-import ParagraphTitle from '../typography/ParagraphTitle';
+import { motion } from 'framer-motion';
+
+import { StoryTypes } from '../../../models/home-page/story.model';
+import { scrollAnimationVariants } from '../utils/scrollAnimationVariants';
+
 import Paragraph from '../typography/Paragraph';
+import ParagraphTitle from '../typography/ParagraphTitle';
+import SubTitle from '../typography/SubTitle';
 
 const HomeStory = () => {
 	const data = useStaticQuery(query);

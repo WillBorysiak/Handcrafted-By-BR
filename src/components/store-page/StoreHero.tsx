@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { scrollAnimationVariants } from '../utils/scrollAnimationVariants';
 
+import { scrollAnimationVariants } from '../utils/scrollAnimationVariants';
 import incentives from '../../data/store-incentives';
+
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
 

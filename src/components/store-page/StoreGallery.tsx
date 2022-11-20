@@ -1,9 +1,11 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
+
 import { motion } from 'framer-motion';
-import { scrollAnimationVariants } from '../utils/scrollAnimationVariants';
+
 import { ProductTypes } from '../../../models/store-page/gallery.model';
+import { scrollAnimationVariants } from '../utils/scrollAnimationVariants';
 
 import SubTitle from '../typography/SubTitle';
 

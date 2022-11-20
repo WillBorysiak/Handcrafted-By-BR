@@ -1,9 +1,12 @@
 import React from 'react';
-import StoreNav from './StoreNav';
 import { GatsbyImage } from 'gatsby-plugin-image';
+
 import { motion } from 'framer-motion';
-import { scrollAnimationVariants } from '../utils/scrollAnimationVariants';
+
 import { StoreProductPropTypes } from '../../../models/store-page/product.model';
+import { scrollAnimationVariants } from '../utils/scrollAnimationVariants';
+
+import StoreNav from './StoreNav';
 
 const StoreProduct = (props: StoreProductPropTypes) => {
 	const product = props.productData;

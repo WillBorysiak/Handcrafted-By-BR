@@ -1,8 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { scrollAnimationVariants } from '../utils/scrollAnimationVariants';
-import SubTitle from '../typography/SubTitle';
 
+import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping } from '@fortawesome/pro-thin-svg-icons';
 import { faSack } from '@fortawesome/pro-thin-svg-icons';
@@ -10,6 +8,10 @@ import { faTeddyBear } from '@fortawesome/pro-thin-svg-icons';
 import { faOrnament } from '@fortawesome/pro-thin-svg-icons';
 import { faClothesHanger } from '@fortawesome/pro-thin-svg-icons';
 import { faMattressPillow } from '@fortawesome/pro-thin-svg-icons';
+
+import { scrollAnimationVariants } from '../utils/scrollAnimationVariants';
+
+import SubTitle from '../typography/SubTitle';
 
 const HomeItems = () => {
 	return (

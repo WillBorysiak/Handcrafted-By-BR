@@ -1,8 +1,9 @@
+import React from 'react';
+import { graphql } from 'gatsby';
+
 import Favicons from '../../layout/Favicons';
 import Layout from '../../layout/Layout';
-import React from 'react';
 import StoreProduct from '../../components/store-page/StoreProduct';
-import { graphql } from 'gatsby';
 
 const StoreProductPage = (props: any) => {
 	const productData = props.data.contentfulStoreProducts;

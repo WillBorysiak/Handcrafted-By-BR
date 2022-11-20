@@ -1,9 +1,10 @@
-import Favicons from '../../layout/Favicons';
-import Layout from '../../layout/Layout';
 import React from 'react';
+
 import StoreGallery from '../../components/store-page/StoreGallery';
 import StoreHero from '../../components/store-page/StoreHero';
 import Title from '../../components/typography/Title';
+import Favicons from '../../layout/Favicons';
+import Layout from '../../layout/Layout';
 
 const StorePage = () => {
 	return (

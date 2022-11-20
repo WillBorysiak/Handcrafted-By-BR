@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
+
 import { motion } from 'framer-motion';
+
 import { scrollAnimationVariants } from '../utils/scrollAnimationVariants';
 import { ProcessTypes } from '../../../models/process-page/grid.model';
-
-import SubTitle from '../typography/SubTitle';
-import ProcessNav from './ProcessNav';
 import processArray from '../../data/process-nav-data';
 import useDidMountEffect from '../hooks/useDidMountEffect';
 import { classNames } from '../utils/classes';
+
+import SubTitle from '../typography/SubTitle';
+import ProcessNav from './ProcessNav';
 
 const ProcessGrid = () => {
 	const [selected, setSelected] = useState(processArray[0]);

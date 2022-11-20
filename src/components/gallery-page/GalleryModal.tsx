@@ -1,8 +1,9 @@
-import React from 'react';
-import { Dialog, Transition } from '@headlessui/react';
-import { Fragment } from 'react';
-import { GalleryModalTypes } from '../../../models/gallery-page/modal.model';
+import React, { Fragment } from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
+
+import { Dialog, Transition } from '@headlessui/react';
+
+import { GalleryModalTypes } from '../../../models/gallery-page/modal.model';
 
 const GalleryModal = (props: GalleryModalTypes) => {
 	return (

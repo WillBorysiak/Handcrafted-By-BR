@@ -1,7 +1,10 @@
 import React from 'react';
-import SubTitle from '../typography/SubTitle';
+
 import { motion } from 'framer-motion';
+
 import { scrollAnimationVariants } from '../utils/scrollAnimationVariants';
+
+import SubTitle from '../typography/SubTitle';
 
 const HomeIncentives = () => {
 	return (

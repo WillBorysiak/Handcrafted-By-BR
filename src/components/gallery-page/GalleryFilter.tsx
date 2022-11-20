@@ -1,14 +1,16 @@
-import GalleryGrid from './GalleryGrid';
-import React, { useEffect } from 'react';
-import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, XMarkIcon } from '@heroicons/react/24/outline';
-import { classNames } from '../utils/classes';
+import React, { Fragment, useEffect, useReducer, useState } from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react';
+import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { motion } from 'framer-motion';
+
 import { FilterAction } from '../../../models/gallery-page/filter.model';
 import { filters, productTypes, sortOptions } from '../../data/product-nav-data';
-import { Fragment, useReducer, useState } from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
-import { motion } from 'framer-motion';
+import { classNames } from '../utils/classes';
 import { scrollAnimationVariants } from '../utils/scrollAnimationVariants';
+
+import GalleryGrid from './GalleryGrid';
 
 const initialState = { sort: 'popular', filterType: undefined, filterColor: [], filterSeason: [] };
 

@@ -1,8 +1,9 @@
-import Favicons from '../layout/Favicons';
-import GalleryFilter from '../components/gallery-page/GalleryFilter';
-import Layout from '../layout/Layout';
 import React from 'react';
+
+import GalleryFilter from '../components/gallery-page/GalleryFilter';
 import Title from '../components/typography/Title';
+import Favicons from '../layout/Favicons';
+import Layout from '../layout/Layout';
 
 const GalleryPage = () => {
 	return (

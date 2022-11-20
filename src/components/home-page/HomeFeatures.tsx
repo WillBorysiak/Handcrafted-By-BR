@@ -1,18 +1,19 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { motion } from 'framer-motion';
-import { scrollAnimationVariants } from '../utils/scrollAnimationVariants';
-import { FeatureTypes } from '../../../models/home-page/feature.model';
-
-import SubTitle from '../typography/SubTitle';
-import ParagraphTitle from '../typography/ParagraphTitle';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenRuler } from '@fortawesome/pro-thin-svg-icons';
 import { faPlanetRinged } from '@fortawesome/pro-thin-svg-icons';
 import { faScissors } from '@fortawesome/pro-thin-svg-icons';
 import { faRecycle } from '@fortawesome/pro-thin-svg-icons';
+
+import { FeatureTypes } from '../../../models/home-page/feature.model';
+import { scrollAnimationVariants } from '../utils/scrollAnimationVariants';
+
 import Paragraph from '../typography/Paragraph';
+import SubTitle from '../typography/SubTitle';
+import ParagraphTitle from '../typography/ParagraphTitle';
 
 const penIcon = <FontAwesomeIcon icon={faPenRuler} size="2x" />;
 const scissorsIcon = <FontAwesomeIcon icon={faScissors} size="2x" />;

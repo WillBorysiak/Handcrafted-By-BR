@@ -1,7 +1,8 @@
+import React from 'react';
+
 import ErrorHero from '../components/404-page/404Hero';
 import Favicons from '../layout/Favicons';
 import Layout from '../layout/Layout';
-import React from 'react';
 
 const ErrorPage = () => {
 	return (
