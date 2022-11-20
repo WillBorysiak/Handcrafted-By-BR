@@ -418,7 +418,7 @@ export default GalleryFilter;
 
 const query = graphql`
 	{
-		allContentfulProductGrid(sort: { fields: createdAt, order: ASC }) {
+		allContentfulProductGrid(sort: { createdAt: ASC }) {
 			nodes {
 				title
 				type

@@ -76,7 +76,7 @@ export default HomeFeatures;
 
 const query = graphql`
 	{
-		allContentfulHomeFeatures(sort: { fields: createdAt }) {
+		allContentfulHomeFeatures(sort: { createdAt: ASC }) {
 			nodes {
 				title
 				body

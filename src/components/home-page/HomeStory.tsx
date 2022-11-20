@@ -67,7 +67,7 @@ export default HomeStory;
 
 const query = graphql`
 	{
-		allContentfulHomeStory(sort: { order: ASC, fields: createdAt }) {
+		allContentfulHomeStory(sort: { createdAt: ASC }) {
 			nodes {
 				title
 				body {

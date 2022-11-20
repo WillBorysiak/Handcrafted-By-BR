@@ -77,7 +77,7 @@ export default ProcessGrid;
 
 const query = graphql`
 	{
-		allContentfulProcessGrid(sort: { fields: createdAt, order: ASC }) {
+		allContentfulProcessGrid(sort: { createdAt: ASC }) {
 			nodes {
 				title
 				body {
