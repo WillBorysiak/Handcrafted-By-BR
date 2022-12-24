@@ -85,7 +85,7 @@ const query = graphql`
 				}
 				contentful_id
 				image {
-					gatsbyImageData(placeholder: TRACED_SVG, layout: CONSTRAINED, height: 400, width: 400, quality: 100)
+					gatsbyImageData(placeholder: DOMINANT_COLOR, layout: CONSTRAINED, height: 400, width: 400, quality: 100)
 				}
 				imageAlt
 			}

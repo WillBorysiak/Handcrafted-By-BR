@@ -55,7 +55,7 @@ const query = graphql`
 				contentful_id
 				url
 				productImage {
-					gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG, resizingBehavior: NO_CHANGE, aspectRatio: 1)
+					gatsbyImageData(layout: CONSTRAINED, placeholder: DOMINANT_COLOR, resizingBehavior: NO_CHANGE, aspectRatio: 1)
 				}
 			}
 		}

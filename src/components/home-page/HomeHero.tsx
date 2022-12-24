@@ -25,12 +25,7 @@ const HomeHero = () => {
 						<div className="flex flex-col items-center ">
 							<SubTitle title="Made with fabric and thread in Derbyshire, England." />
 							<div className=" mt-3 flex w-1/2 justify-center">
-								<StaticImage
-									src="../../assets/images/uk-icon.png"
-									alt="The UK flag"
-									height={50}
-									placeholder="tracedSVG"
-								/>
+								<StaticImage src="../../assets/images/uk-icon.png" alt="The UK flag" height={50} />
 							</div>
 						</div>
 
@@ -123,7 +118,7 @@ const query = graphql`
 			nodes {
 				heroImages {
 					filename
-					gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)
+					gatsbyImageData(layout: CONSTRAINED, placeholder: DOMINANT_COLOR)
 				}
 			}
 		}
