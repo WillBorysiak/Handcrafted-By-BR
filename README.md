@@ -1,34 +1,34 @@
 <h1 align="center">Handcrafted by BarbaraRuth</h1>
  
-<h2 align="center">Purpose of the Website/App:</h2>
+<h2 align="center">Purpose of the App:</h2>
  
-<h3 align="center">To provide a marketing website for a local business.</h3>
+<h3 align="center"><i>To provide a marketing website for a local business.</i></h3>
  
 <h2 align="center">Technology used:</h2>
  
 <div align="center">
-  <img align="center" src="/assets/readme-icons/react-logo.svg" alt="HTML" height="50"/>
-  <p align="center">React</p>
+  <img align="center" src="/docs/readme/icons/react.svg" alt="HTML" height="50"/>
+  <p align="center"><i>React</i></p>
 </div>
    
 <div align="center">
-  <img align="center" src="/assets/readme-icons/gatsbyjs-logo.svg" alt="HTML" height="50"/>
-  <p align="center">GatsbyJS</p>
+  <img align="center" src="/docs/readme/icons/gatsby.svg" alt="HTML" height="50"/>
+  <p align="center"><i>GatsbyJS</i></p>
 </div>
 
 <div align="center">
-  <img align="center" src="/assets/readme-icons/tailwindcss-logo.svg" alt="HTML" height="50"/>
-  <p align="center">TailwindCSS</p>
+  <img align="center" src="/docs/readme/icons/tailwindcss.svg" alt="HTML" height="50"/>
+  <p align="center"><i>TailwindCSS</i></p>
 </div>
 
 <div align="center">
-  <img align="center" src="/assets/readme-icons/graphql-logo.svg" alt="HTML" height="50"/>
-  <p align="center">Graphql</p>
+  <img align="center" src="/docs/readme/icons/graphql.svg" alt="HTML" height="50"/>
+  <p align="center"><i>Graphql</i></p>
 </div>
 
 <div align="center">
-  <img align="center" src="/assets/readme-icons/contentful-logo.svg" alt="HTML" height="50"/>
-  <p align="center">Contentful</p>
+  <img align="center" src="/docs/readme/icons/contentful.svg" alt="HTML" height="50"/>
+  <p align="center"><i>Contentful</i></p>
 </div>
 
 <h2 align="center">How The Website Works</h2>
